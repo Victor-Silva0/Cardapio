@@ -1,38 +1,5 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<?php require("header.php"); ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurante</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="image/restaurante.png" type="image/x-icon">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelector('.toggle-menu').addEventListener('click', function () {
-                document.querySelector('.menu').classList.toggle('show');
-            });
-        });
-    </script>
-</head>
-
-
-<body>
-    <header>
-        <h1>Tech's Restaurante</h1>
-        <button class="toggle-menu">&#9776;</button>
-        <nav class="menu">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="cardapio.html">Cardápio</a></li>
-                <li><a href="pedido.html">Pedido</a></li>
-                <li><a href="login.html">Administração</a></li>
-            </ul>
-        </nav>
-    </header>
     <article>
         <section class="s1">
             <h1>Tipos de Pratos</h1>
@@ -110,18 +77,5 @@
             </div>
         </section>
     </article>
-    <footer>
-        <div class="footer-content">
-          <div class="footer-item">
-            <h4>Endereço</h4>
-            <p>R. Teresina, 75 - Vila Paulo Roberto, Pres. Prudente - SP, 19046-230</p>
-          </div>
-          <div class="footer-item">
-            <h4>Contato</h4>
-            <p>Email: restaurante@gmail.com - Telefone: (18) 99999-9999</p>
-
-          </div>
-        </div>
-      </footer>
-</body>
-</html>
+   
+<?php require("footer.php"); ?>
