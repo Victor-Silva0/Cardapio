@@ -42,8 +42,7 @@ mysqli_close($conn);
         <option value="6">Lanche</option>
       </select>
       <input type="submit" class="btn btn-secondary ms-5 d-inline-block" style="width: 100px;" value="Filtrar">
-      <a href="tipo_opcao.php" class="btn btn-info d-inline-block" style="margin-left: 180px;">Gerenciar Categorias</a>
-      <a href="insert-item.php" class="btn btn-warning d-inline-block" style="margin-left: 145px;">Novo</a>
+      <a href="insert-cardapio.php" class="btn btn-warning" style="margin-left: 600px;">Novo</a>
     </div>
   </form>
   <table class="table table-striped table-bordered table-hover">
