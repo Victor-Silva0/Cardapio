@@ -53,6 +53,7 @@
                     <div class="col-md-6">
                         <a href="cardapio.php"><img src="image/1.jpg"
                                 class="img-fluid smaller-image mx-auto d-block"></a>
+
                         <a href="cardapio.php">Ver mais...</a>
                     </div>
                     <div class="col-md-6">
