@@ -16,7 +16,7 @@ mysqli_close($conn);
   <p>Listagem do itens cadastrados.</p>
   <hr>
   <div class="float-right p-1">
-    <a href="insert-item.php" type="button" class="btn btn-primary">Novo</a>
+    <a href="insert-cardapio.php" type="button" class="btn btn-primary">Novo</a>
   </div>
   <table class="table table-striped table-bordered table-hover">
     <thead>
@@ -37,8 +37,8 @@ mysqli_close($conn);
         <td style="text-align:center">R$ <?php echo number_format($data['preco'],2,",",".");  ?></td> 
         <td>
          
-          <a href="update-item.php?idOpcaoCardapio=<?php echo $data['idOpcaoCardapio']; ?> "type="button" class="btn btn-primary">Editar</a>
-          <a href="delete-item.php?idOpcaoCardapio=<?php echo $data['idOpcaoCardapio']; ?>" button type="button" class="btn btn-danger">Excluir</a>
+          <a href="update-cardapio.php?idOpcaoCardapio=<?php echo $data['idOpcaoCardapio']; ?> "type="button" class="btn btn-primary">Editar</a>
+          <a href="delete-cardapio.php?idOpcaoCardapio=<?php echo $data['idOpcaoCardapio']; ?>" button type="button" class="btn btn-danger">Excluir</a>
         </td> 
       </tr> 
       <?php } ?>       
