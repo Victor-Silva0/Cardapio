@@ -32,7 +32,7 @@ mysqli_close($conn);
   <form method="post" class="mb-3">
     <div class="form-group">
       <label for="filtro">Filtrar por tipo:</label>
-      <select name="filtro" id="filtro" class="form-control">
+      <select name="filtro" id="filtro" class="form-control w-25 d-inline-block">
         <option value="0">Todos</option>
         <option value="1">Refrigerante</option>
         <option value="2">Cerveja</option>
@@ -41,14 +41,10 @@ mysqli_close($conn);
         <option value="5">Sobremesa</option>
         <option value="6">Lanche</option>
       </select>
+      <input type="submit" class="btn btn-secondary ms-5 d-inline-block" style="width: 100px;" value="Filtrar">
+      <a href="insert-item.php" class="btn btn-warning" style="margin-left: 600px;">Novo</a>
     </div>
-    <div class="form-group" style="display: inline-block;">
-  <button type="submit" style="margin-top: 5px;" class="btn btn-secondary">Filtrar</button>
-</div>
   </form>
-  <div class="d-flex justify-content-end align-items-center">
-    <button href="insert-item.php" type="button" class="btn btn-warning" style="margin-bottom: 5px;">Novo</button>
-  </div>
   <table class="table table-striped table-bordered table-hover">
     <thead>
       <tr class="table-danger" style="text-align:center">
