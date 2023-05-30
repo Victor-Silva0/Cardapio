@@ -18,7 +18,7 @@
     </script>
 </head>
 <body>
-    <header>
+    <header style="background-color: #8F342D;">
         <h1>Tech's Restaurante</h1>
         <button class="toggle-menu">&#9776;</button>
         <nav class="menu">
