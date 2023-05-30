@@ -3,10 +3,24 @@ require("header.php");
 
 require_once('connection.php');
 
-$mysql_query = "SELECT * FROM opcoes_cardapio ORDER BY 	idOpcaoCardapio";
+
+if (isset($_POST['filtro'])) {
+  $filtro = $_POST['filtro'];
+  if ($filtro != "0") {
+  $mysql_query = "SELECT * FROM opcoes_cardapio WHERE idTipoOpcoesCardapio = $filtro ORDER BY idOpcaoCardapio";
+  }
+  else {
+    $mysql_query = "SELECT * FROM opcoes_cardapio ORDER BY idOpcaoCardapio";
+  }
+
+} else {
+  $mysql_query = "SELECT * FROM opcoes_cardapio ORDER BY idOpcaoCardapio";
+}
+
 $result = $conn->query($mysql_query);
 mysqli_close($conn);
 ?> 
+
 <head>
   <title>Cardápio</title>
 </head>
@@ -15,8 +29,25 @@ mysqli_close($conn);
   <h2>Cardápio</h2>
   <p>Listagem do itens cadastrados.</p>
   <hr>
-  <div class="float-right p-1">
-    <a href="insert-item.php" type="button" class="btn btn-primary">Novo</a>
+  <form method="post" class="mb-3">
+    <div class="form-group">
+      <label for="filtro">Filtrar por tipo:</label>
+      <select name="filtro" id="filtro" class="form-control">
+        <option value="0">Todos</option>
+        <option value="1">Refrigerante</option>
+        <option value="2">Cerveja</option>
+        <option value="3">Chop</option>
+        <option value="4">Suco</option>
+        <option value="5">Sobremesa</option>
+        <option value="6">Lanche</option>
+      </select>
+    </div>
+    <div class="form-group" style="display: inline-block;">
+  <button type="submit" style="margin-top: 5px;" class="btn btn-secondary">Filtrar</button>
+</div>
+  </form>
+  <div class="d-flex justify-content-end align-items-center">
+    <button href="insert-item.php" type="button" class="btn btn-warning" style="margin-bottom: 5px;">Novo</button>
   </div>
   <table class="table table-striped table-bordered table-hover">
     <thead>

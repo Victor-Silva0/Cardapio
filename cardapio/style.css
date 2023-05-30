@@ -13,7 +13,7 @@ header>h1 {
     padding-top: 10px;
 }
 
-button {
+header > button {
     color: #ffffff;
     background-color: #8F342D;
     position: absolute;
