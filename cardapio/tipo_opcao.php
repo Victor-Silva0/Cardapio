@@ -32,7 +32,7 @@ mysqli_close($conn);
         <th scope="row" style="text-align:center"><?php echo $data['idTipoOpcoesCardapio']; ?></th>
         <td scope="row" style="text-align:center"><?php echo $data['descricao']; ?></td> 
         <td scope="row" style="text-align:center">
-          <a href="update-item.php?idTipoOpcoesCardapio=<?php echo $data['idTipoOpcoesCardapio']; ?> "type="button" class="btn btn-primary">Editar</a>
+          <a href="update-tipo_opcao.php?idTipoOpcoesCardapio=<?php echo $data['idTipoOpcoesCardapio']; ?> "type="button" class="btn btn-primary">Editar</a>
           <a href="delete-item.php?idTipoOpcoesCardapio=<?php echo $data['idTipoOpcoesCardapio']; ?>" button type="button" class="btn btn-danger">Excluir</a>
         </td> 
       </tr> 
