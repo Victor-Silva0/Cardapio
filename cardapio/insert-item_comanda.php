@@ -6,7 +6,6 @@ require_once("connection.php");
 if (isset($_GET['idComanda']))
 {
     $id_comanda_get = $_GET['idComanda'];
-
 }
 
 if (isset($_POST['cadastrar']))
@@ -43,8 +42,37 @@ else
     AND ic.idComanda={$id_comanda_get}
     order by idItemComanda";
     $selectDados = $conn->query($mysql_query1);
-    
 
+    $query = "SELECT sum(oc.preco) preco 
+    FROM opcoes_cardapio oc, itens_comanda ic 
+    where ic.idOpcaoCardapio = oc.idOpcaoCardapio 
+    and ic.idComanda = {$id_comanda_get}";
+    $result = mysqli_query($conn,$query);
+    $fetch = mysqli_fetch_row($result);
+    $valor = $fetch[0];
+
+    $query_nome = "SELECT nomeClienteComanda FROM comanda
+    where idComanda = {$id_comanda_get}";
+    $result_nome = mysqli_query($conn,$query_nome);
+    $fetch1 = mysqli_fetch_row($result_nome);
+    $nome = $fetch1[0];
+
+    $query_origem = "SELECT o.descricaoOrigem, s.descricao
+    FROM comanda c, origem_comanda o, situacao_comanda s
+    where c.idOrigem = o.idOrigem
+    and c.idSituacao = s.idSituacao
+    and c.idComanda = {$id_comanda_get}";
+    $result_origem = mysqli_query($conn,$query_origem);
+    $fetch2 = mysqli_fetch_row($result_origem);
+    $dorigem = $fetch2[0];
+
+    $query_situacao = "SELECT s.descricao
+    FROM comanda c, situacao_comanda s
+    where c.idSituacao = s.idSituacao
+    and c.idComanda = {$id_comanda_get}";
+    $result_situacao = mysqli_query($conn,$query_situacao);
+    $fetch3 = mysqli_fetch_row($result_situacao);
+    $dsituacao = $fetch3[0];
 
 }
 
@@ -52,10 +80,17 @@ else
 
 <div class="container">
     <br>
-    <h2><?php echo "Comanda #"."$id_comanda_get" ?></h2>
-    <p>Gerenciamento dos itens da comanda</p>
+
+    <h1><?php echo "Comanda #"."$id_comanda_get" ?></h1>
+
     <hr>
-    <br>
+ 
+    <p><?php echo "Nome do cliente: <b>".$nome."</b>"?></p>
+    <p><?php echo "Valor total da comanda: <b>R$ ".$valor."</b>"?></p>
+    <p><?php echo "Origem: <b>".$dorigem."</b>"?></p>
+    <p><?php echo "Situação: <b>".$dsituacao."</b>"?></p>
+    <br>    
+    <h4>Incluir mais itens na comanda</h4>
     <div class="wrapper">
         <form method="post">
             <input type="hidden" name="id_comanda" value="<?php echo"$id_comanda_get" ?>">
@@ -79,18 +114,22 @@ else
                 </div>
             </div>
             <br>
-            <input type="submit" name="cadastrar" value="Cadastrar" class="btn btn-primary">
-            <a href="comanda.php"type="button" class="btn btn-warning d-inline-block">Ir para Comandas</a>
-            
+            <div class="row">
+                <div class="col-10">
+                    <input type="submit" name="cadastrar" value="Cadastrar" class="btn btn-primary">
+                </div>
+                <div class="col-2">
+                    <a href="comanda.php"type="button" class="btn btn-warning d-inline-block">Voltar para Comandas</a>
+                </div>
+            </div>
         </form>
         <br>
+
+        <h4>Itens inclusos na comanda</h4>
         <br>
         <table class="table table-striped table-bordered table-hover">
         <thead>
         <tr class="table-danger" style="text-align:center">
-            
-            <th scope="col" style="width: 3%">Comanda</th>
-            <th scope="col" style="width: 3%">Cliente</th>
             <th scope="col" style="width: 12%;">Item</th>
             <th scope="col" style="width: 12%;">Preço</th>
             <th scope="col" style="width: 3%;">Quantidade</th>
@@ -100,17 +139,13 @@ else
         </thead>
         <tbody>
         <?php while($data = mysqli_fetch_array($selectDados)) { ?> 
-        <tr> 
-
-            <td style="text-align:center"><?php echo $data['idComanda']; ?></td>
-            <td style="text-align:center"><?php echo $data['nomeClienteComanda']; ?></td> 
+        <tr>
             <td style="text-align:center"><?php echo $data['nomeOpcaoCardapio']; ?></td>
             <td style="text-align:center"><?php echo $data['preco']; ?></td>  
             <td style="text-align:center"><?php echo $data['quantidade'];  ?></td> 
             <td style="text-align:center"><?php echo $data['obs'];  ?></td>
             <td style="text-align:center">
-            <a href="update-item_comanda.php?idItemComanda=<?php echo $data['idItemComanda']; ?> "type="button" class="btn btn-primary">Editar</a>
-            <a href="delete-item_comanda.php?idItemComanda=<?php echo $data['idItemComanda']; ?> "type="button" class="btn btn-danger">Deletar</a>
+            <a href="delete-item_comanda.php?idItemComanda=<?php echo $data['idItemComanda']; ?> "type="button" class="btn btn-primary">Deletar</a>
             <span class="glyphicon glyphicon-trash"></span>    
             </td> 
         </tr> 
