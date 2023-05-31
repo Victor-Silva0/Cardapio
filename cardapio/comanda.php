@@ -7,15 +7,26 @@ require_once('connection.php');
 if (isset($_POST['filtro'])) {
   $filtro = $_POST['filtro'];
   if ($filtro != "0") {
-  $mysql_query = "SELECT c.*, sitComanda.descricao situacao, origem.descricaoOrigem origem FROM comanda c, situacao_comanda sitComanda, origem_comanda origem WHERE c.idSituacao = {$filtro} and sitComanda.idSituacao = {$filtro} and c.idOrigem = origem.idOrigem ORDER BY dataComanda desc";
+  $mysql_query = "SELECT c.*, sitComanda.descricao situacao, origem.descricaoOrigem origem 
+  FROM comanda c, situacao_comanda sitComanda, origem_comanda origem 
+  WHERE c.idSituacao = {$filtro} 
+  and sitComanda.idSituacao = {$filtro} 
+  and c.idOrigem = origem.idOrigem 
+  ORDER BY idComanda";
   }
   else {
-    $mysql_query = "SELECT c.*, sitComanda.descricao situacao, origem.descricaoOrigem origem FROM comanda c, situacao_comanda sitComanda, origem_comanda origem WHERE c.idSituacao = sitComanda.idSituacao and c.idOrigem = origem.idOrigem ORDER BY dataComanda desc";
+    $mysql_query = "SELECT c.*, sitComanda.descricao situacao, origem.descricaoOrigem origem 
+    FROM comanda c, situacao_comanda sitComanda, origem_comanda origem 
+    WHERE c.idSituacao = sitComanda.idSituacao and c.idOrigem = origem.idOrigem 
+    ORDER BY idComanda";
   }
 
 } else {
-    $mysql_query = "SELECT c.*, sitComanda.descricao situacao, origem.descricaoOrigem origem FROM comanda c, situacao_comanda sitComanda, origem_comanda origem WHERE c.idSituacao = sitComanda.idSituacao and c.idOrigem = origem.idOrigem ORDER BY dataComanda desc";
-}
+    $mysql_query = "SELECT c.*, sitComanda.descricao situacao, origem.descricaoOrigem origem 
+    FROM comanda c, situacao_comanda sitComanda, origem_comanda origem 
+    WHERE c.idSituacao = sitComanda.idSituacao and c.idOrigem = origem.idOrigem 
+    ORDER BY idComanda";
+    }
 
 $result = $conn->query($mysql_query);
 mysqli_close($conn);
@@ -32,13 +43,13 @@ mysqli_close($conn);
   <form method="post" class="mb-3">
     <div class="form-group">
       <label for="filtro">Filtrar por tipo:</label>
-      <select name="filtro" id="filtro" class="form-control w-25 d-inline-block">
+      <select name="filtro" id="filtro" class="form-select w-25 d-inline-block">
         <option value="0">Todos</option>
         <option value="1">Aberta</option>
         <option value="2">Fechada</option>
       </select>
       <input type="submit" class="btn btn-secondary ms-5 d-inline-block" style="width: 100px;" value="Filtrar">
-      <a href="insert-comanda.php" class="btn btn-warning d-inline-block" style="margin-left: 500px;">Novo</a>
+      <a href="insert-comanda.php" class="btn btn-warning d-inline-block" style="margin-left: 500px;">Nova Comanda</a>
     </div>
   </form>
   <table class="table table-striped table-bordered table-hover">
@@ -62,7 +73,7 @@ mysqli_close($conn);
         <td style="text-align:center"><?php echo $data['dataComanda'];  ?></td> 
         <td style="text-align:center"><?php echo $data['origem'];  ?></td> 
         <td style="text-align:center">
-            <a href="item_comanda.php?idComanda=<?php echo $data['idComanda']; ?> "type="button" class="btn btn-success d-inline-block">Visualizar</a>
+            <a href="insert-item_comanda.php?idComanda=<?php echo $data['idComanda']; ?> "type="button" class="btn btn-success d-inline-block">+</a>
         </td>
         <td style="text-align:center">
           <a href="update-comanda.php?idComanda=<?php echo $data['idComanda']; ?> "type="button" class="btn btn-primary">Editar</a>

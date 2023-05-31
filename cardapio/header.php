@@ -25,8 +25,9 @@
             <ul>
                 <li><a href="index.php">Home</a></li>
                 <li><a href="cardapio.php">Cardápio</a></li>
-                <li><a href="comanda.php">Comandas</a></li>
+                <li><a href="pedido.php">Pedido</a></li>
                 <li><a href="login.php">Administração</a></li>
+                <li><a href="comanda.php">Comanda</a></li>
             </ul>
         </nav>
     </header>
