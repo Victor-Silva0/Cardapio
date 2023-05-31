@@ -109,7 +109,8 @@ else
             <td style="text-align:center"><?php echo $data['quantidade'];  ?></td> 
             <td style="text-align:center"><?php echo $data['obs'];  ?></td>
             <td style="text-align:center">
-            <a href="delete-item_comanda.php?idItemComanda=<?php echo $data['idItemComanda']; ?> "type="button" class="btn btn-primary">Deletar</a>
+            <a href="update-item_comanda.php?idItemComanda=<?php echo $data['idItemComanda']; ?> "type="button" class="btn btn-primary">Editar</a>
+            <a href="delete-item_comanda.php?idItemComanda=<?php echo $data['idItemComanda']; ?> "type="button" class="btn btn-danger">Deletar</a>
             <span class="glyphicon glyphicon-trash"></span>    
             </td> 
         </tr> 
