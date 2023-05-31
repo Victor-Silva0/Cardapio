@@ -62,7 +62,7 @@ mysqli_close($conn);
         <td style="text-align:center"><?php echo $data['dataComanda'];  ?></td> 
         <td style="text-align:center"><?php echo $data['origem'];  ?></td> 
         <td style="text-align:center">
-            <a href="update-comanda.php?idComanda=<?php echo $data['idComanda']; ?> "type="button" class="btn btn-success d-inline-block">Visualizar</a>
+            <a href="item_comanda.php?idComanda=<?php echo $data['idComanda']; ?> "type="button" class="btn btn-success d-inline-block">Visualizar</a>
         </td>
         <td style="text-align:center">
           <a href="update-comanda.php?idComanda=<?php echo $data['idComanda']; ?> "type="button" class="btn btn-primary">Editar</a>
