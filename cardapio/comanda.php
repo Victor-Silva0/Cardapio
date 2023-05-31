@@ -49,7 +49,7 @@ mysqli_close($conn);
         <option value="2">Fechada</option>
       </select>
       <input type="submit" class="btn btn-secondary ms-5 d-inline-block" style="width: 100px;" value="Filtrar">
-      <a href="insert-comanda.php" class="btn btn-warning d-inline-block" style="margin-left: 500px;">Nova Comanda</a>
+      <a href="insert-comanda.php" class="btn btn-warning d-inline-block" style="margin-left: 500px;">Incluir nova Comanda</a>
     </div>
   </form>
   <table class="table table-striped table-bordered table-hover">
@@ -59,9 +59,9 @@ mysqli_close($conn);
         <th scope="col" style="width: 15%">Cliente</th>
         <th scope="col" style="width: 5%;">Situação</th>
         <th scope="col" style="width: 20%;">Data Pedido</th>
-        <th scope="col" style="width: 15%;">Origem</th>
-        <th scope="col" style="width: 15%;">Itens da Comanda</th>
-        <th scope="col" style="width: 30%;">Opções Comanda</th>
+        <th scope="col" style="width: 12%;">Origem</th>
+        <th scope="col" style="width: 12%;">Itens da Comanda</th>
+        <th scope="col" style="width: 17%;">Opções Comanda</th>
       </tr>
     </thead>
     <tbody>
@@ -73,7 +73,7 @@ mysqli_close($conn);
         <td style="text-align:center"><?php echo $data['dataComanda'];  ?></td> 
         <td style="text-align:center"><?php echo $data['origem'];  ?></td> 
         <td style="text-align:center">
-            <a href="insert-item_comanda.php?idComanda=<?php echo $data['idComanda']; ?> "type="button" class="btn btn-success d-inline-block">+</a>
+            <a href="insert-item_comanda.php?idComanda=<?php echo $data['idComanda']; ?> "type="button" class="btn btn-success d-inline-block">Abrir</a>
         </td>
         <td style="text-align:center">
           <a href="update-comanda.php?idComanda=<?php echo $data['idComanda']; ?> "type="button" class="btn btn-primary">Editar</a>
