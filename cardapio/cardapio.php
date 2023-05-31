@@ -65,7 +65,7 @@ mysqli_close($conn);
         <td>
          
           <a href="update-item.php?idOpcaoCardapio=<?php echo $data['idOpcaoCardapio']; ?> "type="button" class="btn btn-primary">Editar</a>
-          <a href="delete-item.php?idOpcaoCardapio=<?php echo $data['idOpcaoCardapio']; ?>" button type="button" class="btn btn-danger">Excluir</a>
+          <a href="delete-cardapio.php?idOpcaoCardapio=<?php echo $data['idOpcaoCardapio']; ?>" button type="button" class="btn btn-danger">Excluir</a>
         </td> 
       </tr> 
       <?php } ?>       
