@@ -27,7 +27,7 @@ if (isset($_POST['atualizar']))
 
     mysqli_close($conn);
 
-    header("Location: item_comanda.php?idComanda={$id_comanda}");
+    header("Location: insert-item_comanda.php?idComanda={$id_comanda}");
 }
 else
 {
