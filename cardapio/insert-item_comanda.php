@@ -5,15 +5,8 @@ require_once("connection.php");
 
 if (isset($_GET['idComanda']))
 {
-    $id_comanda = $_GET['idComanda'];
-    $mysql_query = "SELECT ic.*, oc.*, c.nomeClienteComanda
-    FROM itens_comanda ic, opcoes_cardapio oc, comanda c
-    WHERE ic.idOpcaoCardapio=oc.idOpcaoCardapio
-    AND c.idComanda=ic.idComanda 
-    AND ic.idComanda={$id_comanda}
-    order by idItemComanda";
-    $selectComanda = $conn->query($mysql_query);
-    $row_comanda = mysqli_fetch_array($selectComanda);
+    $id_comanda_get = $_GET['idComanda'];
+
 }
 
 if (isset($_POST['cadastrar']))
@@ -23,8 +16,9 @@ if (isset($_POST['cadastrar']))
     $qtde = $_POST['qtde'];
     $obs = $_POST['obs'];
 
-    $mysql_query = "INSERT INTO `itens_comanda`(`idComanda`, `idOpcaoCardapio`, `quantidade`, `obs`) 
+    $mysql_query = "INSERT INTO `itens_comanda`(`idItemComanda`,`idComanda`, `idOpcaoCardapio`, `quantidade`, `obs`) 
     VALUES (
+    'null',
     '{$id_comanda}', 
     '{$id_op_cardapio}', 
     '{$qtde}', 
@@ -34,25 +28,37 @@ if (isset($_POST['cadastrar']))
     $insertItensComanda = $conn->query($mysql_query);
 
     header("Location: insert-item_comanda.php?idComanda={$id_comanda}");
+
     mysqli_close($conn);    	
 }
 else
 {
     $mysql_query = "SELECT * FROM opcoes_cardapio ORDER BY idOpcaoCardapio";
     $selectOpCardapio = $conn->query($mysql_query);
+
+    $mysql_query1 = "SELECT ic.*, oc.*, c.nomeClienteComanda
+    FROM itens_comanda ic, opcoes_cardapio oc, comanda c
+    WHERE ic.idOpcaoCardapio=oc.idOpcaoCardapio
+    AND c.idComanda=ic.idComanda 
+    AND ic.idComanda={$id_comanda_get}
+    order by idItemComanda";
+    $selectDados = $conn->query($mysql_query1);
+    
+
+
 }
 
 ?>
 
 <div class="container">
     <br>
-    <h2><?php echo "Comanda #"."$id_comanda" ?></h2>
+    <h2><?php echo "Comanda #"."$id_comanda_get" ?></h2>
     <p>Gerenciamento dos itens da comanda</p>
     <hr>
     <br>
     <div class="wrapper">
         <form method="post">
-            <input type="hidden" name="id_comanda" value="<?= $row_comanda['idComanda']?>">
+            <input type="hidden" name="id_comanda" value="<?php echo"$id_comanda_get" ?>">
             <div class="row">
                 <div class="col-4">  
                     <label for="op_cardapio">Opção Cardápio</label>
@@ -93,7 +99,7 @@ else
         </tr>
         </thead>
         <tbody>
-        <?php while($data = mysqli_fetch_array($selectComanda)) { ?> 
+        <?php while($data = mysqli_fetch_array($selectDados)) { ?> 
         <tr> 
 
             <td style="text-align:center"><?php echo $data['idComanda']; ?></td>
