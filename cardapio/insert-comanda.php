@@ -5,15 +5,8 @@ require_once("connection.php");
 
 if (isset($_GET['idComanda']))
 {
-    $id_comanda = $_GET['idComanda'];
-    $mysql_query = "SELECT ic.*, oc.*, c.nomeClienteComanda
-    FROM itens_comanda ic, opcoes_cardapio oc, comanda c
-    WHERE ic.idOpcaoCardapio=oc.idOpcaoCardapio
-    AND c.idComanda=ic.idComanda 
-    AND ic.idComanda={$id_comanda}
-    order by idItemComanda";
-    $selectComanda = $conn->query($mysql_query);
-    $row_comanda = mysqli_fetch_array($selectComanda);
+    $id_comanda_get = $_GET['idComanda'];
+
 }
 
 if (isset($_POST['cadastrar']))
@@ -26,9 +19,9 @@ if (isset($_POST['cadastrar']))
     $mysql_query = "INSERT INTO `comanda`(`idComanda`, `nomeClienteComanda`, `idOrigem`, `idSituacao`) 
     VALUES (
     '{$id_comanda}', 
-    '{$nome}', 
-    '{$id_situacao}', 
-    '{$id_origem}'
+    '{$nome}',
+    '{$id_origem}',
+    '{$id_situacao}'
     )";
 
     $insertItensComanda = $conn->query($mysql_query);
@@ -40,8 +33,10 @@ else
 {
     $mysql_query = "SELECT * FROM opcoes_cardapio ORDER BY idOpcaoCardapio";
     $selectOpCardapio = $conn->query($mysql_query);
+    
     $mysql_query1 = "SELECT * FROM origem_comanda";
     $selectOrigem = $conn->query($mysql_query1);
+    
     $mysql_query2 = "SELECT * FROM situacao_comanda";
     $selectSituacao = $conn->query($mysql_query2);
 
@@ -57,7 +52,7 @@ else
     <br>
     <div class="wrapper">
         <form method="post">
-            <input type="hidden" name="id_comanda" value="<?= $row_comanda['idComanda']?>">
+            <input type="hidden" name="id_comanda" value="<?php echo"$id_comanda_get" ?>">
             
             <div class="row">
                 <div class="col-4">
