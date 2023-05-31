@@ -10,7 +10,7 @@ mysqli_close($conn);
 ?> 
 
 <head>
-  <title>Cardápio</title>
+  <title>Tipo de Opções Cardápio</title>
 </head>
 <div class="container">
   <br>
