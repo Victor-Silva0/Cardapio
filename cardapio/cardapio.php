@@ -62,8 +62,8 @@ mysqli_close($conn);
           <td><?php echo $data['descricao']; ?></td>
           <td><?php echo "R$ " . number_format($data['preco'], 2, ',', '.'); ?></td>
           <td style="text-align:center">
-            <a href="edit-cardapio.php?id=<?php echo $data['idOpcaoCardapio']; ?>" class="btn btn-primary btn-sm">Editar</a>
-            <a href="delete-cardapio.php?id=<?php echo $data['idOpcaoCardapio']; ?>" class="btn btn-danger btn-sm">Excluir</a>
+          <a href="update-item.php?idOpcaoCardapio=<?php echo $data['idOpcaoCardapio']; ?> "type="button" class="btn btn-primary">Editar</a>
+          <a href="delete-item.php?idOpcaoCardapio=<?php echo $data['idOpcaoCardapio']; ?>" button type="button" class="btn btn-danger">Excluir</a>
           </td>
         </tr>
       <?php } ?>
