@@ -17,7 +17,8 @@ mysqli_close($conn);
   <h2>Tipo de Opções do cardápio</h2>
   <p>Listagem das opções itens do cardápio.</p>
   <hr>
-  <a href="insert-tipo_opcao.php" class="btn btn-warning d-inline-block" style="margin-left: 1050px; margin-bottom: 10px">Novo</a>
+  <a href="cardapio.php" type="button" class="btn btn-info d-inline-block" style="margin-bottom: 10px">Voltar</a>
+  <a href="insert-tipo_opcao.php" class="btn btn-warning d-inline-block float-end">Novo</a>
   <table class="table table-striped table-bordered table-hover">
     <thead>
       <tr class="table-danger" style="text-align:center">
