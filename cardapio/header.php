@@ -54,5 +54,11 @@ if (isset($_GET['msg'])) {
     else if ($msg  == 'delete-item success') {
         echo "<div class='alert alert-success' role='alert'>Item excluido com sucesso!</div>";
     }
+    else if ($msg == 'delete-comanda error') {
+        echo "<div class='alert alert-danger' role='alert'>A comanda não pode ser excluida pois ela tem itens dentro {$msgerror}</div>";
+    }
+    else if ($msg  == 'delete-comanda success') {
+        echo "<div class='alert alert-success' role='alert'>Comanda excluida com sucesso!</div>";
+    }
 }
 ?>
