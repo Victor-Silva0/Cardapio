@@ -49,19 +49,25 @@ if (isset($_GET['msg'])) {
             echo "<div class='alert alert-danger' role='alert'>Falha ao excluir o registro! {$msgerror}</div>";
     }
     else if ($msg == 'delete-item error') {
-        echo "<div class='alert alert-danger' role='alert'>O item não pode ser excluido do cardápio pois ele existe em uma comanda {$msgerror}</div>";
+        echo "<div class='alert alert-danger' role='alert'>O item não pode ser excluido do cardápio pois ele existe em uma comanda. {$msgerror}</div>";
     }
     else if ($msg  == 'delete-item success') {
         echo "<div class='alert alert-success' role='alert'>Item excluido com sucesso!</div>";
     }
     else if ($msg == 'delete-comanda error') {
-        echo "<div class='alert alert-danger' role='alert'>A comanda não pode ser excluida pois ela tem itens dentro {$msgerror}</div>";
+        echo "<div class='alert alert-danger' role='alert'>A comanda não pode ser excluida pois ela tem itens dentro. {$msgerror}</div>";
     }
     else if ($msg  == 'delete-comanda success') {
         echo "<div class='alert alert-success' role='alert'>Comanda excluida com sucesso!</div>";
     }
     else if ($msg  == 'delete-item_comanda success') {
         echo "<div class='alert alert-success' role='alert'>Item excluido com sucesso!</div>";
+    }
+    else if ($msg == 'delete-tipo_opcao error') {
+        echo "<div class='alert alert-danger' role='alert'>A opção não pode ser excluida pois existem produtos cadastrados com essa opção do cardápio. {$msgerror}</div>";
+    }
+    else if ($msg  == 'delete-tipo_opcao success') {
+        echo "<div class='alert alert-success' role='alert'>Opção excluida com sucesso!</div>";
     }
 }
 ?>

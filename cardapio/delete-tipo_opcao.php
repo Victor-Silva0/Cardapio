@@ -13,7 +13,7 @@ if (isset($_GET['idTipoOpcoesCardapio']))
     
     if ($quantidade > 0)
     {
-        $msg = "delete-item error";
+        $msg = "delete-tipo_opcao error";
 		$msgerror = $conn->error;
         mysqli_close($conn);
     }
@@ -21,7 +21,7 @@ if (isset($_GET['idTipoOpcoesCardapio']))
     {
         $mysql_query = "DELETE FROM tipo_opcoes_cardapio WHERE idTipoOpcoesCardapio = {$id}";
         $conn->query($mysql_query);
-        $msg = "delete-item success";
+        $msg = "delete-tipo_opcao success";
         $msgerror = "";
         mysqli_close($conn);
     }
