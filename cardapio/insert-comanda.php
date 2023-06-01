@@ -56,31 +56,30 @@ else
             
             <div class="row">
                 <div class="col-4">
-                    <label for="nome">Nome do cliente</label>
-                    <input type="text" name="nome" class="form-control" required>
+                    <input type="text" name="nome" class="form-control" placeholder="Nome do cliente" required>
                 </div>
-                <div class="col-4">  
-                    <label for="id_origem">Origem</label>
+                <div class="col-3">  
                     <select class="form-select" name="id_origem" required>
-                        <option selected>Selecione...</option>
+                        <option selected>Selecione a origem da comanda</option>
                         <?php while ($row_origem = mysqli_fetch_array($selectOrigem, MYSQLI_ASSOC)) { ?>
                         <option value="<?= $row_origem['idOrigem'];?>"><?= $row_origem['descricaoOrigem'];?></option>
                         <?php } ?>
                     </select>
                 </div>
-                <div class="col-4">  
-                    <label for="id_situacao">Situação</label>
+                <div class="col-3">  
                     <select class="form-select" name="id_situacao" required>
-                        <option selected>Selecione...</option>
+                        <option selected>Selecione a situação da demanda</option>
                         <?php while ($row_situacao = mysqli_fetch_array($selectSituacao, MYSQLI_ASSOC)) { ?>
                         <option value="<?= $row_situacao['idSituacao'];?>"><?= $row_situacao['descricao'];?></option>
                         <?php } ?>
                     </select>
                 </div>
-
+                <div class="col-2">
+                <input type="submit" name="cadastrar" value="Inserir" class="btn btn-success">
+                </div>
             </div>
             <br>
-            <input type="submit" name="cadastrar" value="Cadastrar" class="btn btn-primary">
+
         </form>
         <br>
         <br>
