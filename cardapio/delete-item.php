@@ -13,16 +13,19 @@ if (isset($_GET['idOpcaoCardapio']))
     
     if ($quantidade > 0)
     {
-        $msg = "delete error";
+        $msg = "delete-item error";
 		$msgerror = $conn->error;
+        mysqli_close($conn);
     }
     else
     {
         $mysql_query = "DELETE FROM opcoes_cardapio WHERE idOpcaoCardapio = {$id}";
         $conn->query($mysql_query);
+        $msg = "delete-item success";
+        $msgerror = "";
         mysqli_close($conn);
     }
 }
 
-header("Location: cardapio.php");
+header("Location: cardapio.php?msg={$msg}&msgerror={$msgerror}");
 ?>

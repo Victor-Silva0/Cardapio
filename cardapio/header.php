@@ -31,3 +31,34 @@
         </nav>
     </header>
     <main>
+    <?php 
+if (isset($_GET['msg'])) {
+    $msg = $_GET['msg'];
+    $msgerror = $_GET['msgerror'];
+    if ($msg == 'insert success') {
+		echo "<div class='alert alert-success' role='alert'>Registro inserido com sucesso!</div>";
+    } else if ($msg  == 'insert error')  { 
+            echo "<div class='alert alert-danger' role='alert'>Falha ao inserir o registro! {$msgerror}</div>";
+    } else if ($msg  == 'update success')  { 
+            echo "<div class='alert alert-success' role='alert'>Registro atualizado com sucesso!</div>";
+    } else if ($msg  == 'update error')  { 
+            echo "<div class='alert alert-danger' role='alert'>Falha ao atualizar o registro! {$msgerror}</div>";
+    } else if ($msg  == 'delete success')  { 
+            echo "<div class='alert alert-success' role='alert'>Registro excluido com sucesso!</div>";
+    } else if ($msg  == 'delete error')  { 
+            echo "<div class='alert alert-danger' role='alert'>Falha ao excluir o registro! {$msgerror}</div>";
+    }
+    else if ($msg == 'delete-item error') {
+        echo "<div class='alert alert-danger' role='alert'>O item não pode ser excluido do cardápio pois ele existe em uma comanda {$msgerror}</div>";
+    }
+    else if ($msg  == 'delete-item success') {
+        echo "<div class='alert alert-success' role='alert'>Item excluido com sucesso!</div>";
+    }
+    else if ($msg == 'delete-comanda error') {
+        echo "<div class='alert alert-danger' role='alert'>A comanda não pode ser excluida pois ela tem itens dentro {$msgerror}</div>";
+    }
+    else if ($msg  == 'delete-comanda success') {
+        echo "<div class='alert alert-success' role='alert'>Comanda excluida com sucesso!</div>";
+    }
+}
+?>
