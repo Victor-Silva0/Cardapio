@@ -5,24 +5,19 @@ if (isset($_GET['idComanda']))
     $id = $_GET['idComanda'];
 
     require_once("connection.php");
-    $quantidade_query = "SELECT COUNT(*) AS qtde FROM itens_comanda WHERE idComanda = {$id}";
-    $quantidade_result = $conn->query($quantidade_query);
-    $quantidade_row = $quantidade_result->fetch_assoc();
-    $quantidade = $quantidade_row['qtde'];
+    $mysql_query = "DELETE FROM itens_comanda WHERE idComanda={$id}";
+    $mysql_query1 = "DELETE FROM comanda WHERE idComanda={$id}";
 
-    if ($quantidade > 0)
+    if ($conn->query($mysql_query) === TRUE)
     {
-        $msg = "delete-comanda error";
-		$msgerror = $conn->error;
-        mysqli_close($conn);
+        $conn->query($mysql_query1);
+        $msg = "delete-comanda success";
+        $msgerror = "";
     }
     else
     {
-        $mysql_query = "DELETE FROM comanda WHERE idComanda = {$id}";
-        $conn->query($mysql_query);
-        $msg = "delete-comanda success";
-        $msgerror = "";
-        mysqli_close($conn);
+        $msg = "delete-comanda error";
+		$msgerror = $conn->error;
     }
 }
 
