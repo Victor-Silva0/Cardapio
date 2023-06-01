@@ -58,11 +58,11 @@ else
             <label for="tipo_opcao">Tipo da opção</label>
             <select class="form-select" name="tipo_opcao" style="width: 200px;" required>
                 <option selected>Selecione...</option>
-                <?php while ($row_tipo = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-                    if ($row_tipo['idTipoOpcoesCardapio'] != $row_opcao['idTipoOpcoesCardapio']) {?>
-                        <option value="<?= $row_tipo['idTipoOpcoesCardapio'];?>"><?= $row_tipo['descricao'];?></option>
-                <?php  } } ?>
+                <?php while ($row_tipo = mysqli_fetch_array($result, MYSQLI_ASSOC)) { ?>
+                <option value="<?= $row_tipo['idTipoOpcoesCardapio'];?>"><?= $row_tipo['descricao'];?></option>
+                <?php } ?>
             </select>
+
             <br>
 
             <label for="descricao">Descrição</label>
