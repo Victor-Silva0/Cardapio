@@ -60,7 +60,7 @@ else
             <input type="number" name="quantidade" class="form-control" style="width: 200px;" required value="<?= $row_placeholder['quantidade']?>">
             <br>
             <label for="observacao">Observação</label>
-            <input type="text" name="observacao" class="form-control" style="width: 500px;" required value="<?= $row_placeholder['obs']?>">
+            <input type="text" name="observacao" class="form-control" style="width: 500px;" value="<?= $row_placeholder['obs']?>">
             <br>
             <input type="submit" name="atualizar" value="Atualizar" class="btn btn-primary w100">
         </form>
