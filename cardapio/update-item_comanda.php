@@ -48,7 +48,7 @@ else
             <input type="hidden" name="id_item" value="<?= $row_placeholder['idItemComanda']?>">
             <br>
             <label for="opcao_cardapio">Opção do cardápio</label>
-            <select name="opcao_cardapio" class="form-control" style="width: 200px;" required>
+            <select name="opcao_cardapio" class="form-select" style="width: 200px;" required>
                 <option value="<?= $row_placeholder['idOpcaoCardapio'] ?>" selected><?= $row_placeholder['nomeOpcaoCardapio']; ?></option>
                 <?php while ($row_opcao = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
                     if ($row_opcao['idOpcaoCardapio'] != $row_placeholder['idOpcaoCardapio']) {?>
@@ -57,10 +57,10 @@ else
             </select>
             <br>
             <label for="quantidade">Quantidade</label>
-            <input type="number" name="quantidade" class="form-control" style="width: 550px;" required value="<?= $row_placeholder['quantidade']?>">
+            <input type="number" name="quantidade" class="form-control" style="width: 200px;" required value="<?= $row_placeholder['quantidade']?>">
             <br>
             <label for="observacao">Observação</label>
-            <input type="text" name="observacao" class="form-control" style="width: 200px;" required value="<?= $row_placeholder['obs']?>">
+            <input type="text" name="observacao" class="form-control" style="width: 500px;" required value="<?= $row_placeholder['obs']?>">
             <br>
             <input type="submit" name="atualizar" value="Atualizar" class="btn btn-primary w100">
         </form>
