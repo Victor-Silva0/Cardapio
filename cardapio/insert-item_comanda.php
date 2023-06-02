@@ -133,7 +133,7 @@ else
                     </select>
                 </div>
                 <div class="col-2">
-                    <input type="number" name="qtde" class="form-control" placeholder="Quantidade" required >
+                    <input type="number" min="1" name="qtde" class="form-control" placeholder="Quantidade" required >
                 </div>
                 <div class="col-6">
                     <input type="text" name="obs" class="form-control" placeholder="Observações">
@@ -159,7 +159,7 @@ else
         <?php while($data = mysqli_fetch_array($selectDados)) { ?> 
         <tr>
             <td style="text-align:center"><?php echo $data['nomeOpcaoCardapio']; ?></td>
-            <td style="text-align:center"><?php echo $data['preco']; ?></td>  
+            <td style="text-align:center"><?php echo "R$ " . number_format($data['preco'], 2, ',', '.'); ?></td>  
             <td style="text-align:center"><?php echo $data['quantidade'];  ?></td> 
             <td style="text-align:center"><?php echo $data['obs'];  ?></td>
             <td style="text-align:center">

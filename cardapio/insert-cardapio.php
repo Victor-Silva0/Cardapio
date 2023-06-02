@@ -70,7 +70,7 @@ else
             <br>
 
             <label for="preco">Preço</label>
-            <input type="text" name="preco" class="form-control" style="width: 200px;" required >
+            <input type="number" min="0.05" step=0.01 name="preco" class="form-control" style="width: 200px;" required >
             <br>
 
             <input type="submit" name="cadastrar" value="Cadastrar" class="btn btn-primary w100">
