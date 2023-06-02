@@ -60,7 +60,7 @@ else
             <input type="text" name="descricao" class="form-control" style="width: 550px;" required value="<?= $row_opcao['descricao']?>">
             <br>
             <label for="preco">Preço</label>
-            <input type="text" name="preco" class="form-control" style="width: 200px;" required value="<?= $row_opcao['preco']?>">
+            <input type="number" min="0.05" step=0.01 name="preco" class="form-control" style="width: 200px;" required value="<?= $row_opcao['preco']?>">
             <br>
             <input type="submit" name="atualizar" value="Atualizar" class="btn btn-primary w100">
         </form>

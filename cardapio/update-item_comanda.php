@@ -57,7 +57,7 @@ else
             </select>
             <br>
             <label for="quantidade">Quantidade</label>
-            <input type="number" name="quantidade" class="form-control" style="width: 200px;" required value="<?= $row_placeholder['quantidade']?>">
+            <input type="number" min="1" name="quantidade" class="form-control" style="width: 200px;" required value="<?= $row_placeholder['quantidade']?>">
             <br>
             <label for="observacao">Observação</label>
             <input type="text" name="observacao" class="form-control" style="width: 500px;" value="<?= $row_placeholder['obs']?>">
