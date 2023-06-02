@@ -3,6 +3,7 @@ require("header.php");
 
 require_once("connection.php");
 
+
 if (isset($_GET['idOpcaoCardapio']))
 {
     $id_opcao_cardapio = $_GET['idOpcaoCardapio'];
@@ -36,6 +37,9 @@ else
 
 ?>
 
+<head>
+    <title>Alterar Item</title>
+</head>
 <div class="container">
     <br>
     <h2>Cardápio</h2>

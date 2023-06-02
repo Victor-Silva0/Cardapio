@@ -12,6 +12,9 @@ if (isset($_POST['cadastrar'])) {
     header("Location: tipo_opcao.php");
 }
 ?>
+<head>
+    <title>Novo tipo</title>
+</head>
 
 <div class="container">
     <br>

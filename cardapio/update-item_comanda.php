@@ -37,6 +37,9 @@ else
 
 ?>
 
+<head>
+    <title>Itens da comanda</title>
+</head>
 <div class="container">
     <br>
     <h2>Itens da comanda</h2>

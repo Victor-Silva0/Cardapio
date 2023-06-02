@@ -42,6 +42,9 @@ else
 
 ?>
 
+<head>
+    <title>Novo item</title>
+</head>
 <div class="container">
     <br>
     <h2>Cardápio</h2>

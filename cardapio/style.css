@@ -112,11 +112,20 @@ section>h1 {
     
 }
 
-.carousel-caption .carousel-title {
+.carousel-caption {
+    top: 0;
+    transform: translateY(0);
+    font-size: 35px;
+    margin-top: 10px;
+    transition: none; 
+}
+
+.carousel-title {
     background-color: rgba(0, 0, 0, 0.87);
     padding: 10px;
     font-size: 3vw;
     display: inline;
+    color: #ffffff;
     border-radius: 5%;
     font-weight: 600;
 }

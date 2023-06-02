@@ -34,6 +34,9 @@ else
 
 ?>
 
+<head>
+    <title>Alterar tipo</title>
+</head>
 <div class="container">
     <br>
     <h2>Categorias</h2>
