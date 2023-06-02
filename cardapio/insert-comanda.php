@@ -44,6 +44,9 @@ else
 
 ?>
 
+<head>
+    <title>Nova comanda</title>
+</head>
 <div class="container">
     <br>
     <h2>Nova Comanda</h2>

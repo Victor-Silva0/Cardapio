@@ -88,6 +88,10 @@ else
 
 ?>
 
+<head>
+    <title>Alterar <?php echo "Comanda #"."$id_comanda_get" ?></title>
+</head>
+
 <div class="container">
     <br>
 

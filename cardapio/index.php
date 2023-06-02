@@ -1,5 +1,8 @@
 <?php require("header.php"); ?>
 
+<head>
+    <title>Tech's Restaurante</title>
+</head>
     <article>
         <section class="s1">
             <h1>Tipos de Pratos</h1>

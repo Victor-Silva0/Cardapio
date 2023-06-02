@@ -38,6 +38,9 @@ else
 
 ?>
 
+<head>
+    <title>Atualizar Comanda</title>
+</head>
 <div class="container">
     <br>
     <h2>Comanda</h2>
