@@ -112,7 +112,7 @@ else
             <p><?php echo "Situação: <b>".$dsituacao."</b>"?></p>
         </div>
         <div class="col-1">
-            <input type="submit" name="encerrar" value="Encerrar" class="btn btn-danger">
+            <input type="submit" name="encerrar" value="Encerrar" class="btn btn-danger float-end">
         </div>
 
     </div>
@@ -139,7 +139,7 @@ else
                     <input type="text" name="obs" class="form-control" placeholder="Observações">
                 </div>
                 <div class="col-1">
-                    <input type="submit" name="cadastrar" value="Cadastrar" class="btn btn-primary">
+                    <input type="submit" name="cadastrar" value="Cadastrar" class="btn btn-primary float-end">
                 </div>
             </div>
             <br>

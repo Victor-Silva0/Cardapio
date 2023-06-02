@@ -48,8 +48,8 @@ mysqli_close($conn);
         <option value="1">Aberta</option>
         <option value="2">Fechada</option>
       </select>
-      <input type="submit" class="btn btn-secondary ms-5 d-inline-block" style="width: 100px;" value="Filtrar">
-      <a href="insert-comanda.php" class="btn btn-warning d-inline-block" style="margin-left: 500px;">Incluir nova Comanda</a>
+      <input type="submit" class="btn btn-secondary ms-0 d-inline-block" style="width: 100px;" value="Filtrar">
+      <a href="insert-comanda.php" class="btn btn-warning d-inline-block float-end">Incluir nova Comanda</a>
     </div>
   </form>
   <table class="table table-striped table-bordered table-hover">
