@@ -49,8 +49,7 @@ else
 </head>
 <div class="container">
     <br>
-    <h2>Nova Comanda</h2>
-    <p>Cadastro de comanda</p>
+    <h2>Cadastrar nova comanda</h2>
     <hr>
     <br>
     <div class="wrapper">
@@ -78,7 +77,7 @@ else
                     </select>
                 </div>
                 <div class="col-2">
-                <input type="submit" name="cadastrar" value="Inserir" class="btn btn-success">
+                <input type="submit" name="cadastrar" value="Inserir" class="btn btn-primary">
                 </div>
             </div>
             <br>

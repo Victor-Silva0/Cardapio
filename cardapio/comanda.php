@@ -37,14 +37,13 @@ mysqli_close($conn);
 </head>
 <div class="container">
   <br>
-  <h2>Comanda</h2>
-  <p>Listagem das comandas</p>
+  <h2>Gerenciar Comandas</h2>
   <hr>
   <form method="post" class="mb-3">
     <div class="form-group">
-      <label for="filtro">Filtrar por tipo:</label>
+      <label for="filtro">Filtrar por situação:</label>
       <select name="filtro" id="filtro" class="form-select w-25 d-inline-block">
-        <option value="0">Todos</option>
+        <option value="0">Todas</option>
         <option value="1">Aberta</option>
         <option value="2">Fechada</option>
       </select>

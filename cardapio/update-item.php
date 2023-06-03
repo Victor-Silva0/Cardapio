@@ -52,7 +52,7 @@ else
             <input type="text" name="nome" class="form-control" style="width: 250px;" required value="<?= $row_opcao['nomeOpcaoCardapio']?>">
             <br>
             <label for="tipo_opcao">Tipo da opção</label>
-            <select name="tipo_opcao" class="form-control" style="width: 200px;" required>
+            <select name="tipo_opcao" class="form-select" style="width: 200px;" required>
                 <option value="<?= $row_opcao['idTipoOpcoesCardapio'] ?>" selected><?= $row_opcao['tipo']; ?></option>
                 <?php while ($row_tipo = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
                     if ($row_tipo['idTipoOpcoesCardapio'] != $row_opcao['idTipoOpcoesCardapio']) {?>

@@ -27,8 +27,7 @@ mysqli_close($conn);
 </head>
 <div class="container">
   <br>
-  <h2>Cardápio</h2>
-  <p>Listagem dos itens cadastrados.</p>
+  <h2>Gerenciar Cardápio</h2>
   <hr>
   <form method="post" class="mb-3">
     <div class="form-group">
@@ -40,8 +39,8 @@ mysqli_close($conn);
         <?php } ?>
       </select>
       <input type="submit" class="btn btn-secondary ms-2 d-inline-block" value="Filtrar">
-      <a href="insert-cardapio.php" class="btn btn-warning d-inline-block float-end">Novo</a>
-      <a href="tipo_opcao.php" class="btn btn-info  d-inline-block float-end" style="margin-right: 5px;">Gerenciar Categorias</a>
+      <a href="insert-cardapio.php" class="btn btn-warning d-inline-block float-end">Incluir nova opção</a>
+      <a href="tipo_opcao.php" class="btn btn-info  d-inline-block float-end" style="margin-right: 5px;">Gerenciar Tipos</a>
     </div>
   </form>
   <table class="table table-striped table-bordered table-hover">
