@@ -53,7 +53,7 @@ else
     order by idItemComanda";
     $selectDados = $conn->query($mysql_query1);
 
-    $query = "SELECT sum(oc.preco) preco 
+    $query = "SELECT sum(oc.preco*ic.quantidade) preco 
     FROM opcoes_cardapio oc, itens_comanda ic 
     where ic.idOpcaoCardapio = oc.idOpcaoCardapio 
     and ic.idComanda = {$id_comanda_get}";
@@ -116,7 +116,7 @@ else
             <p><?php echo "Situação: <b>".$dsituacao."</b>"?></p>
         </div>
         <div class="col-1">
-            <input type="submit" name="encerrar" value="Encerrar" class="btn btn-danger float-end">
+            <input type="submit" name="encerrar" value="Encerrar Comanda" class="btn btn-danger float-end">
         </div>
 
     </div>
@@ -153,8 +153,9 @@ else
         <thead>
         <tr class="table-danger" style="text-align:center">
             <th scope="col" style="width: 20%;">Item</th>
-            <th scope="col" style="width: 20%;">Preço</th>
+            <th scope="col" style="width: 10%;">Valor Unitário</th>
             <th scope="col" style="width: 10%;">Quantidade</th>
+            <th scope="col" style="width: 10%;">Valor Total</th>
             <th scope="col" style="width: 30%;">Observação</th>
             <th scope="col" style="width: 20%;">Opções</th>
         </tr>
@@ -164,7 +165,8 @@ else
         <tr>
             <td style="text-align:center"><?php echo $data['nomeOpcaoCardapio']; ?></td>
             <td style="text-align:center"><?php echo "R$ " . number_format($data['preco'], 2, ',', '.'); ?></td>  
-            <td style="text-align:center"><?php echo $data['quantidade'];  ?></td> 
+            <td style="text-align:center"><?php echo $data['quantidade'];  ?></td>
+            <td style="text-align:center"><?php echo "R$ " . number_format((($data['preco'])*$data['quantidade']), 2, ',', '.'); ?></td>
             <td style="text-align:center"><?php echo $data['obs'];  ?></td>
             <td style="text-align:center">
             <a href="update-item_comanda.php?idItemComanda=<?php echo $data['idItemComanda']; ?> "type="button" class="btn btn-primary">Editar</a>

@@ -18,8 +18,7 @@ if (isset($_POST['cadastrar'])) {
 
 <div class="container">
     <br>
-    <h2>Cardápio</h2>
-    <p>Cadastro de novos tipos de opções no cardápio.</p>
+    <h2>Cadastrar novo tipo de opção no cardápio</h2>
     <hr>
     <div class="wrapper">
         <form method="post">

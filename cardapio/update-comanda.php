@@ -53,7 +53,7 @@ else
             <input type="text" name="nome" class="form-control" style="width: 250px;" required value="<?= $row_placeholder['nomeClienteComanda']?>">
             <br>
             <label for="id_origem">Origem</label>
-            <select name="id_origem" class="form-control" style="width: 200px;" required>
+            <select name="id_origem" class="form-select" style="width: 200px;" required>
                 <option value="<?= $row_placeholder['idOrigem'] ?>" selected><?= $row_placeholder['descricaoOrigem']; ?></option>
                 <?php while ($row_origem = mysqli_fetch_array($select_origem, MYSQLI_ASSOC)) {
                     if ($row_origem['idOrigem'] != $row_placeholder['idOrigem']) {?>
@@ -62,7 +62,7 @@ else
             </select>
             <br>
             <label for="id_situacao">Situação</label>
-            <select name="id_situacao" class="form-control" style="width: 200px;" required>
+            <select name="id_situacao" class="form-select" style="width: 200px;" required>
                 <option value="<?= $row_placeholder['idSituacao'] ?>" selected><?= $row_placeholder['descricao']; ?></option>
                 <?php while ($row_situacao = mysqli_fetch_array($select_situacao, MYSQLI_ASSOC)) {
                     if ($row_situacao['idSituacao'] != $row_placeholder['idSituacao']) {?>

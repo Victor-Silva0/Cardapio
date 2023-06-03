@@ -47,36 +47,33 @@ else
 </head>
 <div class="container">
     <br>
-    <h2>Cardápio</h2>
-    <p>Cadastro de novas opções no cardápio.</p>
+    <h2>Cadastro de novas opções no cardápio</h2>
     <hr>
     <div class="wrapper">
         <form method="post">
             <input type="hidden" name="id_opcao" value="<?= $row_opcao['idOpcaoCardapio']?>">
-
-            <label for="nome">Nome da opção</label>
-            <input type="text" name="nome" class="form-control" style="width: 500px;" required>
-            <br>
-            
-            <label for="tipo_opcao">Tipo da opção</label>
-            <select class="form-select" name="tipo_opcao" style="width: 200px;" required>
-                <option selected>Selecione...</option>
-                <?php while ($row_tipo = mysqli_fetch_array($result, MYSQLI_ASSOC)) { ?>
-                <option value="<?= $row_tipo['idTipoOpcoesCardapio'];?>"><?= $row_tipo['descricao'];?></option>
-                <?php } ?>
-            </select>
-
-            <br>
-
-            <label for="descricao">Descrição</label>
-            <input type="text" name="descricao" class="form-control" style="width: 500px;" required>
-            <br>
-
-            <label for="preco">Preço</label>
-            <input type="number" min="0.05" step=0.01 name="preco" class="form-control" style="width: 200px;" required >
-            <br>
-
-            <input type="submit" name="cadastrar" value="Cadastrar" class="btn btn-primary w100">
+            <div class="row">
+                <div class="col-2">
+                    <input type="text" name="nome" class="form-control" placeholder="Nome da opção" required>
+                </div>
+                <div class="col-2">
+                    <select class="form-select" name="tipo_opcao"  required>
+                    <option selected>Tipo</option>
+                    <?php while ($row_tipo = mysqli_fetch_array($result, MYSQLI_ASSOC)) { ?>
+                    <option value="<?= $row_tipo['idTipoOpcoesCardapio'];?>"><?= $row_tipo['descricao'];?></option>
+                    <?php } ?>
+                    </select>
+                </div>
+                <div class="col-5">
+                    <input type="text" name="descricao" class="form-control" placeholder="Descrição" required>
+                </div>
+                <div class="col-2">
+                    <input type="number" min="0.05" step=0.01 name="preco" class="form-control" placeholder="Preço" required >
+                </div>
+                <div class="col-1">
+                <input type="submit" name="cadastrar" value="Cadastrar" class="btn btn-primary w100">
+                </div>
+            </div>
         </form>
     </div>
 </div>
