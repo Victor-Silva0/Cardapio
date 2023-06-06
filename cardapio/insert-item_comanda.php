@@ -42,7 +42,13 @@ if (isset($_POST['cadastrar']))
 
 else
 {
-    $mysql_query = "SELECT * FROM opcoes_cardapio ORDER BY idOpcaoCardapio";
+    $mysql_query = "SELECT 
+    o.*,
+    concat(o.nomeOpcaoCardapio,' (',o.descricao,')') as NomeDesc, 
+    concat(t.descricao, ' - ',o.nomeOpcaoCardapio,' - ',o.descricao) as TipoNomeDesc
+    FROM opcoes_cardapio o, tipo_opcoes_cardapio t
+    WHERE o.idTipoOpcoesCardapio = t.idTipoOpcoesCardapio 
+    ORDER BY TipoNomeDesc";
     $selectOpCardapio = $conn->query($mysql_query);
 
     $mysql_query1 = "SELECT ic.*, oc.*, c.nomeClienteComanda
@@ -132,7 +138,7 @@ else
                     <select class="form-select" name="op_cardapio" required>
                     <option selected>Selecione a opção do cardápio...</option>
                         <?php while ($row_opcardapio = mysqli_fetch_array($selectOpCardapio, MYSQLI_ASSOC)) { ?>
-                        <option value="<?= $row_opcardapio['idOpcaoCardapio'];?>"><?= $row_opcardapio['nomeOpcaoCardapio'];?></option>
+                        <option value="<?= $row_opcardapio['idOpcaoCardapio'];?>"><?= $row_opcardapio['NomeDesc'];?></option>
                         <?php } ?>
                     </select>
                 </div>
