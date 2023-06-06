@@ -10,12 +10,17 @@ $tipos_result = $conn->query($tipos_query);
 if (isset($_POST['filtro'])) {
   $filtro = $_POST['filtro'];
   if ($filtro != "0") {
-    $mysql_query = "SELECT * FROM opcoes_cardapio WHERE idTipoOpcoesCardapio = $filtro ORDER BY idOpcaoCardapio";
+    $mysql_query = "SELECT o.*, t.descricao as tipoDescricao FROM opcoes_cardapio o, tipo_opcoes_cardapio t 
+    WHERE o.idTipoOpcoesCardapio = t.idTipoOpcoesCardapio
+    and o.idTipoOpcoesCardapio = $filtro 
+    ORDER BY o.idOpcaoCardapio";
   } else {
-    $mysql_query = "SELECT * FROM opcoes_cardapio ORDER BY idOpcaoCardapio";
+    $mysql_query = "SELECT o.*, t.descricao as tipoDescricao FROM opcoes_cardapio o, tipo_opcoes_cardapio t 
+    WHERE o.idTipoOpcoesCardapio = t.idTipoOpcoesCardapio ORDER BY o.idOpcaoCardapio";
   }
 } else {
-  $mysql_query = "SELECT * FROM opcoes_cardapio ORDER BY idOpcaoCardapio";
+  $mysql_query = "SELECT o.*, t.descricao as tipoDescricao FROM opcoes_cardapio o, tipo_opcoes_cardapio t 
+  WHERE o.idTipoOpcoesCardapio = t.idTipoOpcoesCardapio ORDER BY o.idOpcaoCardapio";
 }
 
 $result = $conn->query($mysql_query);
@@ -48,8 +53,9 @@ mysqli_close($conn);
       <tr class="table-danger" style="text-align:center">
         <th scope="col" style="width: 5%;">#</th>
         <th scope="col" style="width: 20%">Nome</th>
-        <th scope="col" style="width: 30%;">Descrição</th>
-        <th scope="col" style="width: 15%;">Preço (R$)</th>
+        <th scope="col" style="width: 10%">Tipo</th>
+        <th scope="col" style="width: 20%;">Descrição</th>
+        <th scope="col" style="width: 10%;">Preço (R$)</th>
         <th scope="col" style="width: 15%;">Opções</th>
       </tr>
     </thead>
@@ -58,6 +64,7 @@ mysqli_close($conn);
         <tr>
           <th scope="row" style="text-align:center"><?php echo $data['idOpcaoCardapio']; ?></th>
           <td><?php echo $data['nomeOpcaoCardapio']; ?></td>
+          <td><?php echo $data['tipoDescricao']; ?></td>
           <td><?php echo $data['descricao']; ?></td>
           <td><?php echo "R$ " . number_format($data['preco'], 2, ',', '.'); ?></td>
           <td style="text-align:center">
@@ -68,6 +75,7 @@ mysqli_close($conn);
       <?php } ?>
     </tbody>
   </table>
+  <br>
 </div>
 
 <?php require("footer.php"); ?>
