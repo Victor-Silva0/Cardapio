@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 24/05/2023 às 02:57
--- Versão do servidor: 10.4.27-MariaDB
--- Versão do PHP: 8.0.25
+-- Tempo de geração: 07-Jun-2023 às 02:24
+-- Versão do servidor: 10.4.24-MariaDB
+-- versão do PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `comanda`
+-- Estrutura da tabela `comanda`
 --
 
 CREATE TABLE `comanda` (
@@ -33,10 +33,10 @@ CREATE TABLE `comanda` (
   `idOrigem` int(11) NOT NULL,
   `idSituacao` int(11) NOT NULL,
   `dataComanda` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Despejando dados para a tabela `comanda`
+-- Extraindo dados da tabela `comanda`
 --
 
 INSERT INTO `comanda` (`idComanda`, `nomeClienteComanda`, `idOrigem`, `idSituacao`, `dataComanda`) VALUES
@@ -57,7 +57,29 @@ INSERT INTO `comanda` (`idComanda`, `nomeClienteComanda`, `idOrigem`, `idSituaca
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `itens_comanda`
+-- Estrutura da tabela `comentarios`
+--
+
+CREATE TABLE `comentarios` (
+  `idComentario` int(11) NOT NULL,
+  `nome` varchar(50) DEFAULT NULL,
+  `comentario` varchar(150) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `comentarios`
+--
+
+INSERT INTO `comentarios` (`idComentario`, `nome`, `comentario`) VALUES
+(1, 'Morgan Yu', 'Os lanches são deliciosos.'),
+(2, 'Altina Orion', 'Tudo estava ótimo mas o meu prato favorito foi o pudim divino que eu comi.'),
+(3, 'Josival Rego', 'O atendimento foi ótimo mas a comida não foi muito boa teria sido melhor eu ter ido na pizzaria guanabara.'),
+(4, 'Luna Hakurei Kochiya', 'O atendimento e a comida estavam ótimos.');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `itens_comanda`
 --
 
 CREATE TABLE `itens_comanda` (
@@ -66,10 +88,10 @@ CREATE TABLE `itens_comanda` (
   `idOpcaoCardapio` int(11) NOT NULL,
   `quantidade` int(11) NOT NULL,
   `obs` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Despejando dados para a tabela `itens_comanda`
+-- Extraindo dados da tabela `itens_comanda`
 --
 
 INSERT INTO `itens_comanda` (`idItemComanda`, `idComanda`, `idOpcaoCardapio`, `quantidade`, `obs`) VALUES
@@ -85,7 +107,7 @@ INSERT INTO `itens_comanda` (`idItemComanda`, `idComanda`, `idOpcaoCardapio`, `q
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `opcoes_cardapio`
+-- Estrutura da tabela `opcoes_cardapio`
 --
 
 CREATE TABLE `opcoes_cardapio` (
@@ -94,10 +116,10 @@ CREATE TABLE `opcoes_cardapio` (
   `idTipoOpcoesCardapio` int(11) NOT NULL,
   `descricao` varchar(50) DEFAULT NULL,
   `preco` double DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Despejando dados para a tabela `opcoes_cardapio`
+-- Extraindo dados da tabela `opcoes_cardapio`
 --
 
 INSERT INTO `opcoes_cardapio` (`idOpcaoCardapio`, `nomeOpcaoCardapio`, `idTipoOpcoesCardapio`, `descricao`, `preco`) VALUES
@@ -111,16 +133,16 @@ INSERT INTO `opcoes_cardapio` (`idOpcaoCardapio`, `nomeOpcaoCardapio`, `idTipoOp
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `origem_comanda`
+-- Estrutura da tabela `origem_comanda`
 --
 
 CREATE TABLE `origem_comanda` (
   `idOrigem` int(11) NOT NULL,
   `descricaoOrigem` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Despejando dados para a tabela `origem_comanda`
+-- Extraindo dados da tabela `origem_comanda`
 --
 
 INSERT INTO `origem_comanda` (`idOrigem`, `descricaoOrigem`) VALUES
@@ -137,16 +159,16 @@ INSERT INTO `origem_comanda` (`idOrigem`, `descricaoOrigem`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `situacao_comanda`
+-- Estrutura da tabela `situacao_comanda`
 --
 
 CREATE TABLE `situacao_comanda` (
   `idSituacao` int(11) NOT NULL,
   `descricao` varchar(40) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Despejando dados para a tabela `situacao_comanda`
+-- Extraindo dados da tabela `situacao_comanda`
 --
 
 INSERT INTO `situacao_comanda` (`idSituacao`, `descricao`) VALUES
@@ -156,16 +178,16 @@ INSERT INTO `situacao_comanda` (`idSituacao`, `descricao`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `tipo_opcoes_cardapio`
+-- Estrutura da tabela `tipo_opcoes_cardapio`
 --
 
 CREATE TABLE `tipo_opcoes_cardapio` (
   `idTipoOpcoesCardapio` int(11) NOT NULL,
   `descricao` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Despejando dados para a tabela `tipo_opcoes_cardapio`
+-- Extraindo dados da tabela `tipo_opcoes_cardapio`
 --
 
 INSERT INTO `tipo_opcoes_cardapio` (`idTipoOpcoesCardapio`, `descricao`) VALUES
@@ -176,12 +198,25 @@ INSERT INTO `tipo_opcoes_cardapio` (`idTipoOpcoesCardapio`, `descricao`) VALUES
 (5, 'Sobremesa'),
 (6, 'Lanche');
 
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `idUsuario` int(11) NOT NULL,
+  `nomeUsuario` varchar(50) DEFAULT NULL,
+  `senhaUsuario` varchar(255) DEFAULT NULL,
+  `dt_criacaoUsuario` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 --
 -- Índices para tabelas despejadas
 --
 
 --
--- Índices de tabela `comanda`
+-- Índices para tabela `comanda`
 --
 ALTER TABLE `comanda`
   ADD PRIMARY KEY (`idComanda`),
@@ -189,7 +224,13 @@ ALTER TABLE `comanda`
   ADD KEY `idSituacao` (`idSituacao`);
 
 --
--- Índices de tabela `itens_comanda`
+-- Índices para tabela `comentarios`
+--
+ALTER TABLE `comentarios`
+  ADD PRIMARY KEY (`idComentario`);
+
+--
+-- Índices para tabela `itens_comanda`
 --
 ALTER TABLE `itens_comanda`
   ADD PRIMARY KEY (`idItemComanda`),
@@ -197,32 +238,38 @@ ALTER TABLE `itens_comanda`
   ADD KEY `idOpcaoCardapio` (`idOpcaoCardapio`);
 
 --
--- Índices de tabela `opcoes_cardapio`
+-- Índices para tabela `opcoes_cardapio`
 --
 ALTER TABLE `opcoes_cardapio`
   ADD PRIMARY KEY (`idOpcaoCardapio`),
   ADD KEY `idTipoOpcoesCardapio` (`idTipoOpcoesCardapio`);
 
 --
--- Índices de tabela `origem_comanda`
+-- Índices para tabela `origem_comanda`
 --
 ALTER TABLE `origem_comanda`
   ADD PRIMARY KEY (`idOrigem`);
 
 --
--- Índices de tabela `situacao_comanda`
+-- Índices para tabela `situacao_comanda`
 --
 ALTER TABLE `situacao_comanda`
   ADD PRIMARY KEY (`idSituacao`);
 
 --
--- Índices de tabela `tipo_opcoes_cardapio`
+-- Índices para tabela `tipo_opcoes_cardapio`
 --
 ALTER TABLE `tipo_opcoes_cardapio`
   ADD PRIMARY KEY (`idTipoOpcoesCardapio`);
 
 --
--- AUTO_INCREMENT para tabelas despejadas
+-- Índices para tabela `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`idUsuario`);
+
+--
+-- AUTO_INCREMENT de tabelas despejadas
 --
 
 --
@@ -230,6 +277,12 @@ ALTER TABLE `tipo_opcoes_cardapio`
 --
 ALTER TABLE `comanda`
   MODIFY `idComanda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT de tabela `comentarios`
+--
+ALTER TABLE `comentarios`
+  MODIFY `idComentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `itens_comanda`
@@ -262,18 +315,24 @@ ALTER TABLE `tipo_opcoes_cardapio`
   MODIFY `idTipoOpcoesCardapio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- Restrições para tabelas despejadas
+-- AUTO_INCREMENT de tabela `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Restrições para despejos de tabelas
 --
 
 --
--- Restrições para tabelas `itens_comanda`
+-- Limitadores para a tabela `itens_comanda`
 --
 ALTER TABLE `itens_comanda`
   ADD CONSTRAINT `itens_comanda_ibfk_1` FOREIGN KEY (`idComanda`) REFERENCES `comanda` (`idComanda`),
   ADD CONSTRAINT `itens_comanda_ibfk_2` FOREIGN KEY (`idOpcaoCardapio`) REFERENCES `opcoes_cardapio` (`idOpcaoCardapio`);
 
 --
--- Restrições para tabelas `opcoes_cardapio`
+-- Limitadores para a tabela `opcoes_cardapio`
 --
 ALTER TABLE `opcoes_cardapio`
   ADD CONSTRAINT `opcoes_cardapio_ibfk_1` FOREIGN KEY (`idTipoOpcoesCardapio`) REFERENCES `tipo_opcoes_cardapio` (`idTipoOpcoesCardapio`);
