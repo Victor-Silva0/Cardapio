@@ -48,7 +48,7 @@ section>h1 {
     position: fixed;
     top: 0px;
     left: -300px;
-    width: 300px;
+    width: 200px;
     height: 100%;
     background-color: #9c5e5a;
     transition: left 0.3s ease-in-out;
@@ -190,9 +190,4 @@ footer {
 
 .footer-item p {
     margin-bottom: 5px;
-}
-
-.s3 {
-        text-align: center;
-        background-color: #db9b96;
 }
