@@ -30,8 +30,8 @@ header > button {
 }
 
 button.toggle-menu {
-    font-size: 35px;
-    /* Ajuste o tamanho da fonte do botão conforme necessário */
+    position: fixed;
+    font-size: 40px;
 }
 
 section {
