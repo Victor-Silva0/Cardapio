@@ -40,7 +40,7 @@ mysqli_close($conn);
 </head>
 <div class="container">
   <br>
-  <h2>Cardápio</h2>
+  <h2 class="espaco">Cardápio</h2>
   <hr>
   <form method="post" class="mb-3">
     <div class="form-group">

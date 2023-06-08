@@ -70,7 +70,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 ?>
  
 <div class="container-sm">
-    <h2>Alterar senha</h2>
+    <h2 class="espaco">Alterar senha</h2>
     <p>Por favor, preencha os campos do formulário abaixo para alterar a sua senha.</p>
     <div class="wrapper">
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"> 
@@ -84,10 +84,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <input type="password" name="conf_senha" class="form-control <?php echo (!empty($conf_senha_err)) ? 'is-invalid' : ''; ?>">
                 <span class="invalid-feedback"><?php echo $conf_senha_err; ?></span>
             </div>
+            <br>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Enviar">
-                <a class="btn btn-link ml-2" href="dashboard.php">Cancelar</a>
+                <button class="btn btn-danger" href="dashboard.php">Cancelar</button>
             </div>
+            <br>
         </form>
     </div>    
 </div>

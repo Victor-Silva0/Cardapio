@@ -103,7 +103,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 <div class="container-sm">
     <br>
-    <h2>Registro de novo usuário</h2>
+    <h2 class="espaco">Registro de novo usuário</h2>
     <p>Por favor, preencha os campos do formulário abaixo para criar a sua conta.</p>
     <hr>
     <br>

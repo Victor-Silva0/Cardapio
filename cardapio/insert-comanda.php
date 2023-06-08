@@ -49,7 +49,7 @@ else
 </head>
 <div class="container">
     <br>
-    <h2>Cadastrar nova comanda</h2>
+    <h2 class="espaco">Cadastrar nova comanda</h2>
     <hr>
     <br>
     <div class="wrapper">

@@ -9,11 +9,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 ?>
 
 <div class="container">
-  <h2>Dashboard</h2>
-  <p>Olá, <b><?php echo htmlspecialchars($_SESSION["nomeUsuario"]); ?></b>. Benvindo ao nosso site.</h1>
+  <h2 class="espaco">Dashboard</h2>
+  <p>Olá, <b><?php echo htmlspecialchars($_SESSION["nomeUsuario"]); ?></b>. Seja bem-vindo!</h1>
   <hr>  
   <p>&nbsp;</p>
-  <p>As alterações foram inseridas aqui!!!</p>
+  <p>As alterações são realizadas aqui!!!</p>
   <p>
     <a href="reset-senha.php" class="btn btn-warning">Resete a sua senha</a>
     <a href="logout.php" class="btn btn-danger ml-3">Faça logout em sua conta</a>

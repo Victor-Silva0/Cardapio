@@ -1,3 +1,9 @@
+<?php
+
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -11,25 +17,70 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.dropdown-toggle').addEventListener('click', function () {
+                document.querySelector('.dropdown-menu').classList.toggle('show');
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
             document.querySelector('.toggle-menu').addEventListener('click', function () {
                 document.querySelector('.menu').classList.toggle('show');
             });
         });
+
+        document.addEventListener('click', function(event) {
+        var menu = document.querySelector('.menu');
+        var toggleButton = document.querySelector('.toggle-menu');
+        if (!menu.contains(event.target) && !toggleButton.contains(event.target)) {
+            menu.classList.remove('show'); // Recolhe o menu
+        }
+        });
+
+        document.addEventListener('click', function(event) {
+        var dropdownMenu = document.querySelector('.dropdown-menu');
+        var dropdownToggle = document.querySelector('.dropdown-toggle');
+        if (!dropdownMenu.contains(event.target) && !dropdownToggle.contains(event.target)) {
+            dropdownMenu.classList.remove('show'); // Recolhe o menu dropdown
+        }
+        });
     </script>
 </head>
 <body>
-    <header style="background-color: #8F342D;">
+    <header>
         <h1>Tech's Restaurante</h1>
         <button class="toggle-menu">&#9776;</button>
-        <nav class="menu">
-            <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="cardapioList.php">Cardápio</a></li>
-                <li><a href="cardapio.php">Gerenciar Cardápio</a></li>
-                <li><a href="comanda.php">Gerenciar Comandas</a></li>
-                <li><a href="login.php">Administração</a></li>
-            </ul>
-        </nav>
+        <span class="navbar-text d-inline-block float-end">
+            <?php if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){ ?>
+                <a class="btn btn-warning" href="login.php">Login</a>
+                <nav class="menu">
+                    <ul>
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="cardapioList.php">Cardápio</a></li>
+                        <li><a href="login.php">Login</a></li>
+                    </ul>
+                </nav>
+            <?php } else { ?>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <?php echo htmlspecialchars($_SESSION["nomeUsuario"]); ?>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="dashboard.php">Dashboard</a>
+                        <a class="dropdown-item" href="logout.php">Sair</a>
+                    </div>
+                </div>               
+                <nav class="menu">
+                     <ul>
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="cardapioList.php">Cardápio</a></li>
+                        <li><a href="cardapio.php">Gerenciar Cardápio</a></li>
+                        <li><a href="comanda.php">Gerenciar Comandas</a></li>
+                        <li><a href="login.php">Login</a></li>
+                    </ul>
+                </nav> 
+            <?php } ?>
+        </span>
+
     </header>
     <main>
     <?php 
