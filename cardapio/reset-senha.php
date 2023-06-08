@@ -70,7 +70,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 ?>
  
 <div class="container-sm">
-    <h2>Alterar senha</h2>
+    <h2 class="espaco">Alterar senha</h2>
     <p>Por favor, preencha os campos do formulário abaixo para alterar a sua senha.</p>
     <div class="wrapper">
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"> 

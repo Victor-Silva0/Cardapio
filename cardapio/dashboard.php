@@ -9,7 +9,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 ?>
 
 <div class="container">
-  <h2>Dashboard</h2>
+  <h2 class="espaco">Dashboard</h2>
   <p>Olá, <b><?php echo htmlspecialchars($_SESSION["nomeUsuario"]); ?></b>. Benvindo ao nosso site.</h1>
   <hr>  
   <p>&nbsp;</p>

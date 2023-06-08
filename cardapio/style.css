@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fjalla+One&family=Source+Sans+Pro:wght@400;600;700&display=swap');
 
 header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
     background-color: #8F342D;
     color: white;
     padding: 5px;
@@ -30,8 +35,8 @@ header > button {
 }
 
 button.toggle-menu {
-    font-size: 35px;
-    /* Ajuste o tamanho da fonte do botão conforme necessário */
+    position: fixed;
+    font-size: 40px;
 }
 
 section {
@@ -78,6 +83,10 @@ section>h1 {
 .menu li a:hover {
     background-color: #b39a9a;
     color: white;
+}
+
+.espaco {
+    padding-top: 18vh;
 }
 
 .s1 {
@@ -195,4 +204,11 @@ footer {
 .s3 {
         text-align: center;
         background-color: #db9b96;
+        overflow-x: hidden;
 }
+
+@media (max-width: 800px) {
+    .espaco {
+        padding-top: 12vh;
+    }
+  }

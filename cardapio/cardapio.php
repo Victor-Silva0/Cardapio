@@ -32,7 +32,7 @@ mysqli_close($conn);
 </head>
 <div class="container">
   <br>
-  <h2>Gerenciar Cardápio</h2>
+  <h2 class="espaco">Gerenciar Cardápio</h2>
   <hr>
   <form method="post" class="mb-3">
     <div class="form-group">

@@ -101,7 +101,7 @@ else
 <div class="container">
     <br>
 
-    <h1><?php echo "Comanda #"."$id_comanda_get" ?></h1>
+    <h1 class="espaco"><?php echo "Comanda #"."$id_comanda_get" ?></h1>
     
     <hr>
     <form method="post">
