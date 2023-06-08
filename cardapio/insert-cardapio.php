@@ -47,7 +47,7 @@ else
 </head>
 <div class="container">
     <br>
-    <h2>Cadastro de novas opções no cardápio</h2>
+    <h2 class="espaco">Cadastro de novas opções no cardápio</h2>
     <hr>
     <div class="wrapper">
         <form method="post">

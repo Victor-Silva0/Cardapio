@@ -43,7 +43,7 @@ else
 </head>
 <div class="container">
     <br>
-    <h2>Comanda</h2>
+    <h2 class="espaco">Comanda</h2>
     <p>Atualização do cadastro da comanda.</p>
     <hr>
     <div class="wrapper">

@@ -42,7 +42,7 @@ else
 </head>
 <div class="container">
     <br>
-    <h2>Cardápio</h2>
+    <h2 class="espaco">Cardápio</h2>
     <p>Atualização do cadastro do cardápio.</p>
     <hr>
     <div class="wrapper">

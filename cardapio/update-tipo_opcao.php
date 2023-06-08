@@ -39,7 +39,7 @@ else
 </head>
 <div class="container">
     <br>
-    <h2>Categorias</h2>
+    <h2 class="espaco">Categorias</h2>
     <p>Atualização do cadastro de categorias.</p>
     <hr>
     <div class="wrapper">

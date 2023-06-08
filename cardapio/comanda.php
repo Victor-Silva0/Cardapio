@@ -1,6 +1,11 @@
 <?php
 require("header.php");
 
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+  header("location: login.php");
+  exit;
+}
+
 require_once('connection.php');
 
 
@@ -37,7 +42,7 @@ mysqli_close($conn);
 </head>
 <div class="container">
   <br>
-  <h2>Gerenciar Comandas</h2>
+  <h2 class="espaco">Gerenciar Comandas</h2>
   <hr>
   <form method="post" class="mb-3">
     <div class="form-group">

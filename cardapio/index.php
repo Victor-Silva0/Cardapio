@@ -2,7 +2,7 @@
 
     <article>
         <section class="s1">
-            <h1>Tipos de Pratos</h1>
+            <h1 class="espaco">Tipos de Pratos</h1>
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>

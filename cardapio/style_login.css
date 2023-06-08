@@ -13,10 +13,11 @@
             color: white;
             border: 1px solid #5a231f;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.438);
-            padding: 0px;
             border-radius: 12px;
-            height: 65vh;
+            margin-top: 15vh;
+            height: 60vh;
             width: 70vh;
+            
         }
 
         .form-group {
@@ -35,3 +36,19 @@
             text-align: left;
             width: 50%;
         }
+        @media (max-width: 800px) {
+            .container-sm {
+                height: 55vh;
+                width: 65vh;
+                margin-top: 20vh;
+                margin-bottom: 15vh;
+            }
+          }
+        @media (min-width: 1200px) {
+            .container-sm {
+                height: 50vh;
+                width: 70vh;
+                margin-top: 20vh;
+                margin-bottom: 15vh;
+            }
+          }
