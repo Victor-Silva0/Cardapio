@@ -56,6 +56,7 @@ session_start();
                     <ul>
                         <li><a href="index.php">Home</a></li>
                         <li><a href="cardapioList.php">Cardápio</a></li>
+                        <li><a href="comentarios.php">Reviews</a></li>
                         <li><a href="login.php">Login</a></li>
                     </ul>
                 </nav>
@@ -75,6 +76,7 @@ session_start();
                         <li><a href="cardapioList.php">Cardápio</a></li>
                         <li><a href="cardapio.php">Gerenciar Cardápio</a></li>
                         <li><a href="comanda.php">Gerenciar Comandas</a></li>
+                        <li><a href="comentarios2.php">Reviews</a></li>
                         <li><a href="login.php">Login</a></li>
                     </ul>
                 </nav> 
@@ -120,6 +122,12 @@ if (isset($_GET['msg'])) {
     }
     else if ($msg  == 'delete-tipo_opcao success') {
         echo "<div class='alert alert-success' role='alert'>Opção excluida com sucesso!</div>";
+    }
+    else if ($msg == 'delete-comentario error') {
+        echo "<div class='alert alert-danger' role='alert'>Ocorreu um erro ao tentar excluir o comentario. {$msgerror}</div>";
+    }
+    else if ($msg  == 'delete-comentario success') {
+        echo "<div class='alert alert-success' role='alert'>Comentario excluido com sucesso!</div>";
     }
 }
 ?>
