@@ -93,7 +93,7 @@ section>h1 {
   }
 
 .espaco {
-    padding-top: 18vh;
+    padding-top: 16vh;
 }
 
 .s1 {
@@ -213,6 +213,7 @@ footer {
         background-color: #db9b96;
         overflow-x: hidden;
 }
+
 
 @media (max-width: 800px) {
     .espaco {
