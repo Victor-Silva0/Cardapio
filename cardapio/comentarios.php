@@ -24,8 +24,8 @@ mysqli_close($conn);
   <table class="table table-striped table-bordered table-hover">
     <thead>
       <tr class="table-danger" style="text-align:center">
-        <th scope="col" style="width: 20%">nome</th>
-        <th scope="col" style="width: 30%;">comentario</th>
+        <th scope="col" style="width: 20%">Nome</th>
+        <th scope="col" style="width: 30%;">Comentário</th>
       </tr>
     </thead>
     <tbody>
