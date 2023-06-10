@@ -51,27 +51,27 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <a href="cardapio.php"><img src="image/1.jpg"
+                        <a href="cardapioList.php"><img src="image/1.jpg"
                                 class="img-fluid smaller-image mx-auto d-block"></a>
 
-                        <a href="cardapio.php">Ver mais...</a>
+                        <a href="cardapioList.php">Ver mais...</a>
                     </div>
                     <div class="col-md-6">
-                        <a href="cardapio.php"><img src="image/2.jpg"
+                        <a href="cardapioList.php"><img src="image/2.jpg"
                                 class="img-fluid smaller-image mx-auto d-block"></a>
-                        <a href="cardapio.php">Ver mais...</a>
+                        <a href="cardapioList.php">Ver mais...</a>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6 text-center">
-                        <a href="cardapio.php"><img src="image/3.jpg"
+                        <a href="cardapioList.php"><img src="image/3.jpg"
                                 class="img-fluid smaller-image mx-auto d-block"></a>
-                        <a href="cardapio.php">Ver mais...</a>
+                        <a href="cardapioList.php">Ver mais...</a>
                     </div>
                     <div class="col-md-6">
-                        <a href="cardapio.php"><img src="image/4.jpg"
+                        <a href="cardapioList.php"><img src="image/4.jpg"
                                 class="img-fluid smaller-image mx-auto d-block"></a>
-                        <a href="cardapio.php">Ver mais...</a>
+                        <a href="cardapioList.php">Ver mais...</a>
                     </div>
                 </div>
             </div>
