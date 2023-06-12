@@ -112,8 +112,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     </div>    
                     <div class="form-group">
                         <label>Senha:</label>
-                        <input type="password" name="senhaUsuario" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>">
-                        <span class="invalid-feedback"><?php echo $senhaUsuario_err; ?></span>
+                        <input type="password" name="senhaUsuario" class="form-control <?php echo (!empty($senhaUsuario_err)) ? 'is-invalid' : ''; ?>">
+                        <span><?php echo $senhaUsuario_err; ?></span>
                     </div>
                     <input type="submit" class="btn btn-primary" value="Login">
                     </div>
