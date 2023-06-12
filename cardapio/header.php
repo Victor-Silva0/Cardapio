@@ -61,15 +61,20 @@ session_start();
                     </ul>
                 </nav>
             <?php } else { ?>
-                <div class="btn-group">
-                    <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <?php echo htmlspecialchars($_SESSION["nomeUsuario"]); ?>
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right">
-                        <a class="dropdown-item" href="dashboard.php">Dashboard</a>
-                        <a class="dropdown-item" href="logout.php">Sair</a>
+                <div row>
+                <div class="col-4">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <?php echo htmlspecialchars($_SESSION["nomeUsuario"]); ?>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-left">
+                            <a class="dropdown-item" href="dashboard.php">Dashboard</a>
+                            <a class="dropdown-item" href="reset-senha.php">Reset senha</a>
+                            <a class="dropdown-item" href="logout.php">Sair</a>
+                        </div>
                     </div>
-                </div>               
+                </div>
+                </div>              
                 <nav class="menu">
                      <ul>
                         <li><a href="index.php">Home</a></li>
@@ -77,7 +82,6 @@ session_start();
                         <li><a href="cardapio.php">Gerenciar Cardápio</a></li>
                         <li><a href="comanda.php">Gerenciar Comandas</a></li>
                         <li><a href="comentarios2.php">Reviews</a></li>
-                        <li><a href="login.php">Login</a></li>
                     </ul>
                 </nav> 
             <?php } ?>
@@ -129,5 +133,9 @@ if (isset($_GET['msg'])) {
     else if ($msg  != 'delete-comentario success') {
         echo "<div class='alert alert-success' style='margin-top: 15vh; margin-bottom: -18vh' role='alert'>Comentario excluido com sucesso!</div>";
     }
+    else if ($msg  != 'delete-usuario success') {
+        echo "<div class='alert alert-success' style='margin-top: 15vh; margin-bottom: -18vh' role='alert'>Usuário excluido com sucesso!</div>";
+    }
+
 }
 ?>
