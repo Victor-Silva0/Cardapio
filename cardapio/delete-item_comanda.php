@@ -13,5 +13,5 @@ if (isset($_GET['idItemComanda']))
         mysqli_close($conn);
 }
 
-header("Location: insert-item_comanda.php?msg={$msg}&msgerror={$msgerror}");
+header("Location: insert-item_comanda.php?msg={$msg}&msgerror={$msgerror}&idComanda={$id_comanda_get}");
 ?>
