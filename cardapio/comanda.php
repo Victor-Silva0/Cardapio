@@ -38,7 +38,7 @@ mysqli_close($conn);
 ?> 
 
 <head>
-  <title>Comandas</title>
+  <title>Gerenciar Comandas</title>
 </head>
 <div class="container">
   <br>

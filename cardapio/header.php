@@ -57,7 +57,6 @@ session_start();
                         <li><a href="index.php">Home</a></li>
                         <li><a href="cardapioList.php">Cardápio</a></li>
                         <li><a href="comentarios.php">Reviews</a></li>
-                        <li><a href="login.php">Login</a></li>
                     </ul>
                 </nav>
             <?php } else { ?>
@@ -68,7 +67,6 @@ session_start();
                             <?php echo htmlspecialchars($_SESSION["nomeUsuario"]); ?>
                         </button>
                         <div class="dropdown-menu dropdown-menu-left">
-                            <a class="dropdown-item" href="dashboard.php">Dashboard</a>
                             <a class="dropdown-item" href="reset-senha.php">Reset senha</a>
                             <a class="dropdown-item" href="logout.php">Sair</a>
                         </div>
@@ -78,10 +76,7 @@ session_start();
                 <nav class="menu">
                      <ul>
                         <li><a href="index.php">Home</a></li>
-                        <li><a href="cardapioList.php">Cardápio</a></li>
-                        <li><a href="cardapio.php">Gerenciar Cardápio</a></li>
-                        <li><a href="comanda.php">Gerenciar Comandas</a></li>
-                        <li><a href="comentarios2.php">Reviews</a></li>
+                        <li><a href="dashboard.php">Dashboard</a></li>
                     </ul>
                 </nav> 
             <?php } ?>
@@ -130,10 +125,10 @@ if (isset($_GET['msg'])) {
     else if ($msg == 'delete-comentario error') {
         echo "<div class='alert alert-danger' style='margin-top: 15vh; margin-bottom: -18vh' role='alert'>Ocorreu um erro ao tentar excluir o comentario. {$msgerror}</div>";
     }
-    else if ($msg  == 'delete-comentario success') {
+    else if ($msg  != 'delete-comentario success') {
         echo "<div class='alert alert-success' style='margin-top: 15vh; margin-bottom: -18vh' role='alert'>Comentario excluido com sucesso!</div>";
     }
-    else if ($msg  == 'delete-usuario success') {
+    else if ($msg  != 'delete-usuario success') {
         echo "<div class='alert alert-success' style='margin-top: 15vh; margin-bottom: -18vh' role='alert'>Usuário excluido com sucesso!</div>";
     }
 

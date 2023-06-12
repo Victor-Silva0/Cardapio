@@ -33,7 +33,7 @@ mysqli_close($conn);
 ?>
 
 <head>
-  <title>Cardápio</title>
+  <title>Gerenciar Cardápio</title>
 </head>
 <div class="container">
   <br>
