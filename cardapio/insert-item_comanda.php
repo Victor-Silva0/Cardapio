@@ -176,7 +176,7 @@ else
             <td style="text-align:center"><?php echo $data['obs'];  ?></td>
             <td style="text-align:center">
             <a href="update-item_comanda.php?idItemComanda=<?php echo $data['idItemComanda']; ?> "type="button" class="btn btn-primary">Editar</a>
-            <a href="delete-item_comanda.php?idItemComanda=<?php echo $data['idItemComanda']; ?> "type="button" class="btn btn-danger">Excluir</a>    
+            <a href="delete-item_comanda.php?idItemComanda=<?php echo $data['idItemComanda']; ?>&idComanda=<?php echo $id_comanda_get; ?> "type="button" class="btn btn-danger">Excluir</a>    
             </td> 
         </tr> 
         <?php } ?>       
