@@ -130,10 +130,10 @@ if (isset($_GET['msg'])) {
     else if ($msg == 'delete-comentario error') {
         echo "<div class='alert alert-danger' style='margin-top: 15vh; margin-bottom: -18vh' role='alert'>Ocorreu um erro ao tentar excluir o comentario. {$msgerror}</div>";
     }
-    else if ($msg  != 'delete-comentario success') {
+    else if ($msg  == 'delete-comentario success') {
         echo "<div class='alert alert-success' style='margin-top: 15vh; margin-bottom: -18vh' role='alert'>Comentario excluido com sucesso!</div>";
     }
-    else if ($msg  != 'delete-usuario success') {
+    else if ($msg  == 'delete-usuario success') {
         echo "<div class='alert alert-success' style='margin-top: 15vh; margin-bottom: -18vh' role='alert'>Usuário excluido com sucesso!</div>";
     }
 
