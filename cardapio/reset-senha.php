@@ -68,7 +68,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     mysqli_close($conn);
 }
 ?>
- 
+
+<head>
+  <title>Alterar Senha</title>
+</head>
 <div class="container-sm">
     <h2 class="espaco">Alterar senha</h2>
     <p>Por favor, preencha os campos do formulário abaixo para alterar a sua senha.</p>

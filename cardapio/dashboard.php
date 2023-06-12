@@ -8,6 +8,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 }
 ?>
 
+<head>
+  <title>Dashboard</title>
+</head>
 <div class="container">
   <h2 class="espaco">Dashboard</h2>
   <p>Olá, <b><?php echo htmlspecialchars($_SESSION["nomeUsuario"]); ?></b>. Seja bem-vindo!</h1>
