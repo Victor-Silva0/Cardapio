@@ -7,7 +7,7 @@ if (isset($_GET['idComentario']))
     require_once("connection.php");
         $mysql_query = "DELETE FROM comentarios WHERE idComentario = {$id}";
         $conn->query($mysql_query);
-        $msg = "ddelete-comentario success";
+        $msg = "delete-comentario success";
         $msgerror = "";
         mysqli_close($conn);
 }
