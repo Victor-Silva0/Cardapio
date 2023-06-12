@@ -1,7 +1,9 @@
 <?php require("header.php"); ?>
-    <head>
-        <title>Home</title>
-    </head>
+
+<head>
+  <title>Home</title>
+</head>
+
     <article>
         <section class="s1">
             <h1 class="espaco">Tipos de Pratos</h1>

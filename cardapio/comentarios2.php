@@ -16,11 +16,11 @@ mysqli_close($conn);
 ?>
 
 <head>
-  <title>Reviews</title>
+  <title>Gerenciar Comentários</title>
 </head>
 <div class="container">
   <br>
-  <h2 class="espaco">Reviews</h2>
+  <h2 class="espaco">Gerenciar Comentários</h2>
   <hr>
   <form method="post" class="mb-3">
   <div class="form-group">
