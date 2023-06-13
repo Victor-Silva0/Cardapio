@@ -81,10 +81,10 @@
             </div>
         </section>
         <section class="s3">
-            <h1>Veja oque os nossos clientes dizem sobre o nosso restaurante</h1>
+            <h1>Veja o que os nossos clientes dizem sobre o nosso restaurante</h1>
             <div class="row">
                 <div class="col-sm-6">
-                    <div class="card text-white bg-danger mb-3">
+                    <div class="card text-white mb-3" style="background-color:#8F5753;">
                         <div class="card-body">
                             <h5 class="card-title">Morgan Yu</h5>
                             <p class="card-text">Os lanches são deliciosos.</p>
@@ -92,7 +92,7 @@
                     </div>
                 </div>
                 <div class="col-sm-6">
-                    <div class="card text-white bg-danger mb-3">
+                    <div class="card text-white mb-3" style="background-color:#8F5753;">
                         <div class="card-body">
                             <h5 class="card-title">Altina Orion</h5>
                             <p class="card-text">Tudo estava ótimo mas o meu prato favorito foi o pudim divino que eu comi.</p>
@@ -100,15 +100,15 @@
                     </div>
                 </div>
                 <div class="col-sm-6">
-                    <div class="card text-white bg-danger mb-3">
+                    <div class="card text-white mb-3" style="background-color:#8F5753;">
                         <div class="card-body">
                             <h5 class="card-title">Josival Rego</h5>
-                            <p class="card-text">O atendimento foi ótimo mas a comida não foi muito boa teria sido melhor eu ter ido na pizzaria guanabara.</p>
+                            <p class="card-text">A comida não foi muito boa teria sido melhor eu ter ido na pizzaria.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-6">
-                    <div class="card text-white bg-danger mb-3">
+                    <div class="card text-white mb-3" style="background-color:#8F5753;">
                         <div class="card-body">
                             <h5 class="card-title">Luna Hakurei Kochiya</h5>
                             <p class="card-text">O atendimento e a comida estavam ótimos.</p>
