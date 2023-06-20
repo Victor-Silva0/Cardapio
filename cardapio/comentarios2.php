@@ -22,10 +22,6 @@ mysqli_close($conn);
   <br>
   <h2 class="espaco">Gerenciar Comentários</h2>
   <hr>
-  <form method="post" class="mb-3">
-  <div class="form-group">
-    <a href="insert-comentario.php" class="btn btn-warning d-inline-block float-end" style="margin-bottom: 10px;">Incluir novo comentario</a>
-  </form>
   <table class="table table-striped table-bordered table-hover">
     <thead>
       <tr class="table-danger" style="text-align:center">
