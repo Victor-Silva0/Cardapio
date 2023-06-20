@@ -77,12 +77,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"> 
             <div class="form-group">
                 <label for="nova_senha">Nova Senha:</label>
-                <input type="password" name="nova_senha" class="form-control <?php echo (!empty($nova_senha_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $nova_senha; ?>">
+                <input type="password" name="nova_senha" style="width: 250px;" class="form-control <?php echo (!empty($nova_senha_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $nova_senha; ?>">
                 <span class="invalid-feedback"><?php echo $nova_senha_err; ?></span>
             </div>
             <div class="form-group">
                 <label for="conf_senha">Confirmação da Nova Senha:</label>
-                <input type="password" name="conf_senha" class="form-control <?php echo (!empty($conf_senha_err)) ? 'is-invalid' : ''; ?>">
+                <input type="password" name="conf_senha" style="width: 250px;" class="form-control <?php echo (!empty($conf_senha_err)) ? 'is-invalid' : ''; ?>">
                 <span class="invalid-feedback"><?php echo $conf_senha_err; ?></span>
             </div>
             <br>
