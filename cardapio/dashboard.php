@@ -48,7 +48,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         <img src="image/foto_usuarios.jpg" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">Gerenciar Usuários</h5>
-            <p class="card-text">Aqui você gerencia os usuários administradores do sistema, somente é possivel consultar os usuários já cadastrados, incluir um novo usuário ou exlcuir 
+            <p class="card-text">Aqui você gerencia os usuários administradores do sistema, somente é possivel consultar os usuários já cadastrados, incluir um novo usuário ou excluir 
               algum usuário que não poderá mais acessar o sistema.</p>
             <a href="usuario.php" class="btn btn-primary">Entrar</a>
           </div>
