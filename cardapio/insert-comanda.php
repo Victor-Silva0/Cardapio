@@ -70,7 +70,7 @@ else
                 </div>
                 <div class="col-3">  
                     <select class="form-select" name="id_situacao" required>
-                        <option selected>Selecione a situação da demanda</option>
+                        <option selected>Selecione a situação da comanda</option>
                         <?php while ($row_situacao = mysqli_fetch_array($selectSituacao, MYSQLI_ASSOC)) { ?>
                         <option value="<?= $row_situacao['idSituacao'];?>"><?= $row_situacao['descricao'];?></option>
                         <?php } ?>
