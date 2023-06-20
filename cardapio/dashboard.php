@@ -60,7 +60,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
           <div class="card-body">
             <h5 class="card-title">Gerenciar Comentários</h5>
             <p class="card-text">Aqui você gerencia os comentários dos clientes, somente é possivel consultar os 
-              comentários já cadastrados, incluir um novo ou exlcuir algum que não seja adequado.</p>
+              comentários já cadastrados ou excluir algum que não seja adequado.</p>
             <a href="comentarios2.php" class="btn btn-primary">Entrar</a>
           </div>
       </div>
