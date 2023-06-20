@@ -102,7 +102,7 @@
                 <div class="col-sm-6">
                     <div class="card text-white mb-3" style="background-color:#8F5753;">
                         <div class="card-body">
-                            <h5 class="card-title">Josival Rego</h5>
+                            <h5 class="card-title">Josival Silva</h5>
                             <p class="card-text">A comida não foi muito boa teria sido melhor eu ter ido na pizzaria.</p>
                         </div>
                     </div>

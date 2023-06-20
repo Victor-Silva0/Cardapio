@@ -73,7 +73,7 @@ CREATE TABLE `comentarios` (
 INSERT INTO `comentarios` (`idComentario`, `nome`, `comentario`) VALUES
 (1, 'Morgan Yu', 'Os lanches são deliciosos.'),
 (2, 'Altina Orion', 'Tudo estava ótimo mas o meu prato favorito foi o pudim divino que eu comi.'),
-(3, 'Josival Rego', 'O atendimento foi ótimo mas a comida não foi muito boa teria sido melhor eu ter ido na pizzaria guanabara.'),
+(3, 'Josival Silva', 'O atendimento foi ótimo mas a comida não foi muito boa teria sido melhor eu ter ido na pizzaria guanabara.'),
 (4, 'Luna Hakurei Kochiya', 'O atendimento e a comida estavam ótimos.');
 
 -- --------------------------------------------------------
