@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fjalla+One&family=Source+Sans+Pro:wght@400;600;700&display=swap');
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    background-color: #8F342D;
+    color: white;
+    padding: 5px;
+}
+
+header>h1 {
+    text-align: center;
+    font-size: 5vw;
+    font-family: 'Bebas Neue', sans-serif;
+    padding-top: 10px;
+}
+
+header > button {
+    color: #ffffff;
+    background-color: #8F342D;
+    position: absolute;
+    top: 2%;
+    left: 1%;
+    transform: translate(-50%, -50%);
+}
+
+.toggle-menu {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 9999;
+}
+
+button.toggle-menu {
+    position: fixed;
+    font-size: 40px;
+}
+
+section {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+}
+
+section>h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4vw;
+}
+
+.menu {
+    position: fixed;
+    top: 0px;
+    left: -300px;
+    width: 255px;
+    height: 100%;
+    background-color: #9c5e5a;
+    transition: left 0.3s ease-in-out;
+    z-index: 99;
+}
+
+.show {
+    left: 0;
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    padding-top: 50px;
+}
+
+.menu li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: white;
+    font-size: x-large;
+}
+
+.menu li a:hover {
+    background-color: #b39a9a;
+    color: white;
+}
+
+.navbar-text {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    margin-top: 10px;
+  }
+
+.espaco {
+    padding-top: 16vh;
+}
+
+.s1 {
+    text-align: center;
+    background-color: #db9b96;
+    color: rgb(39, 20, 20);
+    font-size: 4vw;
+    padding: 10px 0px 30px 0px;
+}
+
+.carousel-item img {
+    margin: auto;
+    position: relative;
+    border-radius: 3%;
+}
+
+.carousel-control-next {
+    transform: translateX(-125%);
+}
+
+.carousel-control-prev {
+    transform: translateX(125%);
+}
+
+.carousel-item.active .carousel-caption {
+    top: 0;
+    bottom: auto;
+    transform: translateY(0);
+    font-size: 35px;
+    color: #ffffff;
+    margin-top: 10px;
+    
+}
+
+.carousel-caption {
+    top: 0;
+    transform: translateY(0);
+    font-size: 35px;
+    margin-top: 10px;
+    transition: none; 
+}
+
+.carousel-title {
+    background-color: rgba(0, 0, 0, 0.87);
+    padding: 10px;
+    font-size: 3vw;
+    display: inline;
+    color: #ffffff;
+    border-radius: 5%;
+    font-weight: 600;
+}
+
+.s2 {
+    background-color: #aa7672;
+    color: white;
+    padding: 30px;
+    text-align: center;
+    font-size: 2vw;
+}
+
+.s2>h1 {
+    padding-bottom: 15px;
+}
+
+.smaller-image {
+    max-width: 200px;
+    max-height: 350px;
+    position: relative;
+    border-radius: 5%;
+}
+
+.col-md-6 {
+    padding-bottom: 25px;
+}
+
+.col-md-6>a {
+    text-decoration: none;
+    color: white;
+    font-size: x-large;
+}
+
+.col-md-6>a:hover {
+    text-decoration: underline;
+    color: rgb(61, 50, 50);
+    font-size: x-large;
+}
+
+footer {
+    background-color: #8F342D;
+    padding: 10px;
+    color: #333;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.footer-item {
+    margin: 0 20px;
+    color: #ffffff;
+}
+
+.footer-item h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-item p {
+    margin-bottom: 5px;
+}
+
+.s3 {
+        text-align: center;
+        background-color: #db9b96;
+        overflow-x: hidden;
+}
+
+
+@media (max-width: 800px) {
+    .espaco {
+        padding-top: 12vh;
+    }
+  }
